@@ -6594,291 +6594,197 @@ publisher&quot;
 }
 
 </style><!-- LINT.ThenChange( //depot/google3/java/com/google/blogger/b2/layouts/widgets/v2-style.css) -->
-    </b:includable> </b:widget> </b:section> </div> </section> <b:section class='sidebar_bottom' id='sidebar_bottom' name='Sidebar (Bottom)' preferred='yes' > <b:widget id='Label1' locked='false' title='Labels' type='Label' visible='true' > <b:widget-settings> <b:widget-setting name='sorting' >ALPHA</b:widget-setting> <b:widget-setting name='display' >LIST</b:widget-setting> <b:widget-setting name='selectedLabelsList' /> <b:widget-setting name='showType' >ALL</b:widget-setting> <b:widget-setting name='showFreqNumbers' >false</b:widget-setting> </b:widget-settings> <b:includable id='main' var='this' > <b:include name='widget-title' /> <b:include name='content' /> </b:includable> <b:includable id='cloud' > <b:loop values='data:labels' var='label' > <span class='label-size' > <b:class expr:name='&quot;label-size-&quot; + data:label.cssSize' /> <a class='label-name' expr:href='data:label.url' > <data:label.name/> <b:if cond='data:this.showFreqNumbers' > <span class='label-count' ><data:label.count/></span> </b:if> </a> </span> </b:loop> </b:includable> <b:includable id='content' > <div class='widget-content' > <b:class expr:name='data:this.display + &quot;-label-widget-content&quot;' /> <b:include cond='data:this.display == &quot;list&quot;' name='list' /> <b:include cond='data:this.display == &quot;cloud&quot;' name='cloud' /> </div> </b:includable> <b:includable id='list' > <ul> <b:loop values='data:labels' var='label' > <li> <a class='label-name' expr:href='data:label.url' > <data:label.name/> <b:if cond='data:this.showFreqNumbers' > <span class='label-count' ><data:label.count/></span> </b:if> </a> </li> </b:loop> </ul> </b:includable> </b:widget> </b:section> <!-- Contact Section --> <section class='consulting-contact' id='contact-us' > <h2>Contact Us</h2> <p>Ready to start your next engineering project? Get in touch with our team of experts for professional consultation and project planning.</p> <div class='contact-cards-container' > <!-- Contact Info Card --> <div class='contact-info-card' > <h3>Get In Touch</h3> <div class='contact-info-item' > <h4>Email Us</h4> <p><a href='mailto:admin@arconsultingengineers.com' >admin@arconsultingengineers.com</a></p> </div> <div class='contact-info-item' > <h4>Contact with WhatsApp</h4> <p><a href='https://wa.me/61481080412' target='_blank' >+61 481 080 412</a></p> </div> <div class='contact-info-item' > <h4>Follow Us</h4> <p> <a href='https://www.facebook.com/ARconsultingengineers/#' target='_blank' >Facebook</a> | <a href='https://www.instagram.com/ar_consulting_engineersanz/' target='_blank' >Instagram</a> </p> </div> </div> <!-- Contact Form Card --> <div class='contact-form-card' > <h3>Drop us a line !</h3> <form class='contact-form' id='contact-form' > <div class='form-group' > <label for='contact-name' >Name</label> <input id='contact-name' name='name' required='required' type='text' /> </div> <div class='form-group' > <label for='contact-email' >Email<span class='required' >*</span></label> <input id='contact-email' name='email' required='required' type='email' /> </div> <div class='form-group' > <label for='contact-message' >Message</label> <textarea id='contact-message' name='message' required='required' rows='5' /> </div> <button class='send-email-btn' type='submit' >Send Email</button> </form> </div> </div> </section> <!-- Footer --> <footer class='consulting-footer' > <p>&#169; 2026 AR Consulting Engineers. All rights reserved.</p> </footer> <!-- Floating Contact Button --> <button class='floating-donation-btn' id='get-quote-btn' type='button' > GET A Quote </button> <!-- Get Quote Modal --> <div class='quote-modal' id='quote-modal' > <div class='quote-modal-overlay' /> <div class='quote-modal-container' > <button class='quote-modal-close' id='quote-modal-close' >&#215; </button> <div class='quote-modal-content' > <h2>Get a Quote</h2> <p>Fill out the form below and we&#39; ll get back to you soon !</p> <form class='quote-form' id='quote-form' > <div class='form-group' > <label for='quote-name' >Name<span class='required' >*</span></label> <input id='quote-name' name='name' required='required' type='text' /> </div> <div class='form-group' > <label for='quote-email' >Email<span class='required' >*</span></label> <input id='quote-email' name='email' required='required' type='email' /> </div> <div class='form-group' > <label for='quote-phone' >Phone Number</label> <input id='quote-phone' name='phone' type='tel' /> </div> <div class='form-group' > <label for='quote-message' >Project Details / Message<span class='required' >*</span></label> <textarea id='quote-message' name='message' required='required' rows='5' /> </div> <button class='send-email-btn' type='submit' >Send Email</button> </form> </div> </div> </div> <b:template-script async='true' name='indie' version='1.0.0' /> <!-- Blog Post Link Handler Script --> <script type='text/javascript' > // Ensure blog post links work correctly
-
-    document.addEventListener(&#39; DOMContentLoaded&#39; , function() {
-            // Add click handlers to blog post links
-            const blogLinks=document.querySelectorAll(&#39; .blog-read-more, .blog-post-title a&#39; );
-
-            blogLinks.forEach(function(link) {
-                    link.addEventListener(&#39; click&#39; , function(e) {
-
-                            // Ensure the link has a valid href
-                            if (this.href &amp; &amp; this.href !==&#39; #&#39; &amp; &amp; this.href !==&#39; javascript:void(0)&#39; ) {
-                                // Let the default link behavior handle navigation
-                                return true;
-                            }
-
-                            else {
-                                e.preventDefault();
-                                console.log(&#39; Blog post link clicked but no valid URL found&#39; );
-                            }
-                        });
-                });
-
-            // Debug: Log all blog post links
-            console.log(&#39; Found &#39; + blogLinks.length + &#39; blog post links&#39; );
-
-            blogLinks.forEach(function(link, index) {
-                    console.log(&#39; Link &#39; + index + &#39; :&#39; , link.href);
-                });
+    </b:includable> </b:widget> </b:section> </div> </section> <b:section class='sidebar_bottom' id='sidebar_bottom' name='Sidebar (Bottom)' preferred='yes' > <b:widget id='Label1' locked='false' title='Labels' type='Label' visible='true' > <b:widget-settings> <b:widget-setting name='sorting' >ALPHA</b:widget-setting> <b:widget-setting name='display' >LIST</b:widget-setting> <b:widget-setting name='selectedLabelsList' /> <b:widget-setting name='showType' >ALL</b:widget-setting> <b:widget-setting name='showFreqNumbers' >false</b:widget-setting> </b:widget-settings> <b:includable id='main' var='this' > <b:include name='widget-title' /> <b:include name='content' /> </b:includable> <b:includable id='cloud' > <b:loop values='data:labels' var='label' > <span class='label-size' > <b:class expr:name='&quot;label-size-&quot; + data:label.cssSize' /> <a class='label-name' expr:href='data:label.url' > <data:label.name/> <b:if cond='data:this.showFreqNumbers' > <span class='label-count' ><data:label.count/></span> </b:if> </a> </span> </b:loop> </b:includable> <b:includable id='content' > <div class='widget-content' > <b:class expr:name='data:this.display + &quot;-label-widget-content&quot;' /> <b:include cond='data:this.display == &quot;list&quot;' name='list' /> <b:include cond='data:this.display == &quot;cloud&quot;' name='cloud' /> </div> </b:includable> <b:includable id='list' > <ul> <b:loop values='data:labels' var='label' > <li> <a class='label-name' expr:href='data:label.url' > <data:label.name/> <b:if cond='data:this.showFreqNumbers' > <span class='label-count' ><data:label.count/></span> </b:if> </a> </li> </b:loop> </ul> </b:includable> </b:widget> </b:section> <!-- Contact Section --> <section class='consulting-contact' id='contact-us' > <h2>Contact Us</h2> <p>Ready to start your next engineering project? Get in touch with our team of experts for professional consultation and project planning.</p> <div class='contact-cards-container' > <!-- Contact Info Card --> <div class='contact-info-card' > <h3>Get In Touch</h3> <div class='contact-info-item' > <h4>Email Us</h4> <p><a href='mailto:admin@arconsultingengineers.com' >admin@arconsultingengineers.com</a></p> </div> <div class='contact-info-item' > <h4>Contact with WhatsApp</h4> <p><a href='https://wa.me/61481080412' target='_blank' >+61 481 080 412</a></p> </div> <div class='contact-info-item' > <h4>Follow Us</h4> <p> <a href='https://www.facebook.com/ARconsultingengineers/#' target='_blank' >Facebook</a> | <a href='https://www.instagram.com/ar_consulting_engineersanz/' target='_blank' >Instagram</a> </p> </div> </div> <!-- Contact Form Card --> <div class='contact-form-card' > <h3>Drop us a line !</h3> <form class='contact-form' id='contact-form' > <div class='form-group' > <label for='contact-name' >Name</label> <input id='contact-name' name='name' required='required' type='text' /> </div> <div class='form-group' > <label for='contact-email' >Email<span class='required' >*</span></label> <input id='contact-email' name='email' required='required' type='email' /> </div> <div class='form-group' > <label for='contact-message' >Message</label> <textarea id='contact-message' name='message' required='required' rows='5' /> </div> <button class='send-email-btn' type='submit' >Send Email</button> </form> </div> </div> </section> <!-- Footer --> <footer class='consulting-footer' > <p>&#169; 2026 AR Consulting Engineers. All rights reserved.</p> </footer> <!-- Floating Contact Button --> <button class='floating-donation-btn' id='get-quote-btn' type='button' > GET A Quote </button> <!-- Get Quote Modal --> <div class='quote-modal' id='quote-modal' > <div class='quote-modal-overlay' /> <div class='quote-modal-container' > <button class='quote-modal-close' id='quote-modal-close' >&#215; </button> <div class='quote-modal-content' > <h2>Get a Quote</h2> <p>Fill out the form below and we&#39; ll get back to you soon !</p> <form class='quote-form' id='quote-form' > <div class='form-group' > <label for='quote-name' >Name<span class='required' >*</span></label> <input id='quote-name' name='name' required='required' type='text' /> </div> <div class='form-group' > <label for='quote-email' >Email<span class='required' >*</span></label> <input id='quote-email' name='email' required='required' type='email' /> </div> <div class='form-group' > <label for='quote-phone' >Phone Number</label> <input id='quote-phone' name='phone' type='tel' /> </div> <div class='form-group' > <label for='quote-message' >Project Details / Message<span class='required' >*</span></label> <textarea id='quote-message' name='message' required='required' rows='5' /> </div> <button class='send-email-btn' type='submit' >Send Email</button> </form> </div> </div> </div> <!-- Blog Post Link Handler Script -->
+<script type='text/javascript'>
+//<![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
+        const blogLinks = document.querySelectorAll('.blog-read-more, .blog-post-title a');
+        blogLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                if (this.href && this.href !== '#' && this.href !== 'javascript:void(0)') {
+                    return true;
+                } else {
+                    e.preventDefault();
+                }
+            });
         });
+    });
+//]]>
+</script>
+ <!-- Mobile Menu Toggle Script -->     <script type='text/javascript'>
+//<![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const body = document.body;
 
-    </script> <!-- Mobile Menu Toggle Script --> <script type='text/javascript' > document.addEventListener(&#39; DOMContentLoaded&#39; , function() {
-            const mobileMenuToggle=document.getElementById(&#39; mobile-menu-toggle&#39; );
-            const navMenu=document.getElementById(&#39; nav-menu&#39; );
-            const body=document.body;
+        function closeMenu() {
+            navMenu.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            body.style.overflow = '';
+        }
 
-            function closeMenu() {
-                navMenu.classList.remove(&#39; active&#39; );
-                mobileMenuToggle.classList.remove(&#39; active&#39; );
-                body.style.overflow=&#39; &#39; ;
-            }
+        function openMenu() {
+            navMenu.classList.add('active');
+            mobileMenuToggle.classList.add('active');
+            body.style.overflow = 'hidden';
+        }
 
-            function openMenu() {
-                navMenu.classList.add(&#39; active&#39; );
-                mobileMenuToggle.classList.add(&#39; active&#39; );
-                body.style.overflow=&#39; hidden&#39; ;
-            }
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (navMenu.classList.contains('active')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
 
-            if (mobileMenuToggle &amp; &amp; navMenu) {
-                mobileMenuToggle.addEventListener(&#39; click&#39; , function(e) {
-                        e.stopPropagation();
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() { closeMenu(); });
+            });
 
-                        if (navMenu.classList.contains(&#39; active&#39; )) {
-                            closeMenu();
-                        }
-
-                        else {
-                            openMenu();
-                        }
-                    });
-
-                // Close menu when clicking on a link
-                const navLinks=navMenu.querySelectorAll(&#39; a&#39; );
-
-                navLinks.forEach(function(link) {
-                        link.addEventListener(&#39; click&#39; , function() {
-                                closeMenu();
-                            });
-                    });
-
-                // Close menu when clicking on backdrop (outside menu)
-                document.addEventListener(&#39; click&#39; , function(e) {
-                        if (navMenu.classList.contains(&#39; active&#39; )) {
-                            if ( !navMenu.contains(e.target) &amp; &amp; !mobileMenuToggle.contains(e.target)) {
-                                closeMenu();
-                            }
-                        }
-                    });
-
-                // Close menu on escape key
-                document.addEventListener(&#39; keydown&#39; , function(e) {
-                        if (e.key===&#39; Escape&#39; &amp; &amp; navMenu.classList.contains(&#39; active&#39; )) {
-                            closeMenu();
-                        }
-                    });
-
-                // Prevent body scroll when menu is open on touch devices
-                navMenu.addEventListener(&#39; touchmove&#39; , function(e) {
-                        if (navMenu.classList.contains(&#39; active&#39; )) {
-                            e.stopPropagation();
-                        }
+            document.addEventListener('click', function(e) {
+                if (navMenu.classList.contains('active')) {
+                    if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                        closeMenu();
                     }
+                }
+            });
 
-                    , {
-                    passive: false
-                });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+
+            navMenu.addEventListener('touchmove', function(e) {
+                if (navMenu.classList.contains('active')) {
+                    e.stopPropagation();
+                }
+            }, { passive: false });
         }
     });
+//]]>
+</script>
+ <!-- Service Detail Script -->     <script type='text/javascript'>
+//<![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
+        const body = document.body;
+        const currentPath = window.location.pathname;
+        const currentUrl = window.location.href;
 
-</script> <!-- Service Detail Script --> <script type='text/javascript' > document.addEventListener(&#39; DOMContentLoaded&#39; , function() {
-        const body=document.body;
-        const currentPath=window.location.pathname;
-        const currentUrl=window.location.href;
+        const servicePageMap = {
+            'structural-engineering': 'service-structural-engineering',
+            'civil-engineering': 'service-civil-engineering',
+            'consulting-services': 'service-consulting-services'
+        };
 
-        // Check if we&#39;re on a service page
-        const servicePageMap= {
-            &#39; structural-engineering&#39; : &#39; service-structural-engineering&#39; ,
-            &#39; civil-engineering&#39; : &#39; service-civil-engineering&#39; ,
-            &#39; consulting-services&#39; : &#39; service-consulting-services&#39;
-        }
+        let isServicePage = false;
+        let serviceId = null;
 
-        ;
-
-        let isServicePage=false;
-        let serviceId=null;
-
-        // Check if URL contains any service page identifier
         for (const serviceKey in servicePageMap) {
             if (currentPath.includes(serviceKey) || currentUrl.includes(serviceKey)) {
-                isServicePage=true;
-                serviceId=servicePageMap[serviceKey];
+                isServicePage = true;
+                serviceId = servicePageMap[serviceKey];
                 break;
             }
         }
 
-        if (isServicePage &amp; &amp; serviceId) {
-            // We&#39;re on a service page - show it as a normal page
-            body.classList.add(&#39; service-page&#39; );
-
-            // Hide ALL service sections first
-            document.querySelectorAll(&#39; .service-detail-section&#39; ).forEach(function(section) {
-                    section.style.display=&#39; none&#39; ;
-                    section.classList.remove(&#39; active&#39; );
-                    section.classList.remove(&#39; service-active&#39; );
-                });
-
-            // Show only the correct service section
-            const serviceDetailSection=document.getElementById(serviceId);
-
+        if (isServicePage && serviceId) {
+            body.classList.add('service-page');
+            document.querySelectorAll('.service-detail-section').forEach(function(section) {
+                section.style.display = 'none';
+                section.classList.remove('active', 'service-active');
+            });
+            const serviceDetailSection = document.getElementById(serviceId);
             if (serviceDetailSection) {
-                serviceDetailSection.classList.add(&#39; service-active&#39; );
-                serviceDetailSection.style.display=&#39; block&#39; ;
+                serviceDetailSection.classList.add('service-active');
+                serviceDetailSection.style.display = 'block';
             }
-        }
-
-        else {
-            // We&#39;re on the main page - handle modal behavior
-            let currentServiceDetailSection=null;
-
-            // Handle service card clicks (for hash links - backward compatibility)
-            const serviceCardLinks=document.querySelectorAll(&#39; .service-card-link&#39; );
-
+        } else {
+            let currentServiceDetailSection = null;
+            const serviceCardLinks = document.querySelectorAll('.service-card-link');
             serviceCardLinks.forEach(function(link) {
-                    link.addEventListener(&#39; click&#39; , function(e) {
-                            const href=this.getAttribute(&#39; href&#39; );
-
-                            // If it&#39;s a hash link, prevent default and show modal
-                            if (href.startsWith (&#39; #&#39; )) {
-                                e.preventDefault();
-                                const targetId=href.substring(1);
-                                const serviceDetailSection=document.getElementById(targetId);
-
-                                if (serviceDetailSection) {
-                                    showServiceDetail(serviceDetailSection);
-                                }
-                            }
-
-                            // If it&#39;s a page link, let it navigate normally (no preventDefault)
-                        });
-                });
-
-            function showServiceDetail(section) {
-
-                // Close any currently open section first
-                if (currentServiceDetailSection) {
-                    currentServiceDetailSection.classList.remove(&#39; active&#39; );
-                }
-
-                currentServiceDetailSection=section;
-
-                if (section) {
-                    section.classList.add(&#39; active&#39; );
-                    body.style.overflow=&#39; hidden&#39; ;
-                    // Scroll to top of service detail section
-                    section.scrollTop=0;
-                }
-            }
-
-            window.closeServiceDetail=function() {
-                if (currentServiceDetailSection) {
-                    currentServiceDetailSection.classList.remove(&#39; active&#39; );
-                    currentServiceDetailSection=null;
-                    body.style.overflow=&#39; &#39; ;
-                }
-            }
-
-            ;
-
-            // Close on escape key
-            document.addEventListener(&#39; keydown&#39; , function(e) {
-                    if (e.key===&#39; Escape&#39; &amp; &amp; currentServiceDetailSection &amp; &amp; currentServiceDetailSection.classList.contains(&#39; active&#39; )) {
-                        window.closeServiceDetail();
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const serviceDetailSection = document.getElementById(targetId);
+                        if (serviceDetailSection) showServiceDetail(serviceDetailSection);
                     }
                 });
+            });
+
+            function showServiceDetail(section) {
+                if (currentServiceDetailSection) currentServiceDetailSection.classList.remove('active');
+                currentServiceDetailSection = section;
+                if (section) {
+                    section.classList.add('active');
+                    body.style.overflow = 'hidden';
+                    section.scrollTop = 0;
+                }
+            }
+
+            window.closeServiceDetail = function() {
+                if (currentServiceDetailSection) {
+                    currentServiceDetailSection.classList.remove('active');
+                    currentServiceDetailSection = null;
+                    body.style.overflow = '';
+                }
+            };
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && currentServiceDetailSection && currentServiceDetailSection.classList.contains('active')) {
+                    window.closeServiceDetail();
+                }
+            });
         }
     });
-
-</script> <!-- Pictures Page Script --> <script type='text/javascript' > document.addEventListener(&#39; DOMContentLoaded&#39; , function() {
-
-        // Add pictures-page class to body when on pictures page
-        if (window.location.pathname.includes(&#39; /p/pictures.html&#39; ) || window.location.pathname.includes(&#39; /p/pictures&#39; )) {
-            document.body.classList.add(&#39; pictures-page&#39; );
+//]]>
+    </script>
+    <script type='text/javascript'>
+//<![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.location.pathname.includes('/p/pictures.html') || window.location.pathname.includes('/p/pictures')) {
+            document.body.classList.add('pictures-page');
+        }
+        if (window.location.pathname.includes('/p/videos.html') || window.location.pathname.includes('/p/videos')) {
+            document.body.classList.add('videos-page');
         }
 
-        // Add videos-page class to body when on videos page
-        if (window.location.pathname.includes(&#39; /p/videos.html&#39; ) || window.location.pathname.includes(&#39; /p/videos&#39; )) {
-            document.body.classList.add(&#39; videos-page&#39; );
-        }
-
-        // Picture card hover effects
-        const pictureCards=document.querySelectorAll(&#39; .picture-card&#39; );
-
+        const pictureCards = document.querySelectorAll('.picture-card');
         pictureCards.forEach(function(card) {
-                card.addEventListener(&#39; mouseenter&#39; , function() {
-                        this.style.transform=&#39; translateY(-8px) scale(1.02)&#39; ;
-                    });
+            card.addEventListener('mouseenter', function() { this.style.transform = 'translateY(-8px) scale(1.02)'; });
+            card.addEventListener('mouseleave', function() { this.style.transform = 'translateY(0) scale(1)'; });
+        });
 
-                card.addEventListener(&#39; mouseleave&#39; , function() {
-                        this.style.transform=&#39; translateY(0) scale(1)&#39; ;
-                    });
-            });
-
-        // Video card hover effects
-        const videoCards=document.querySelectorAll(&#39; .video-card&#39; );
-
+        const videoCards = document.querySelectorAll('.video-card');
         videoCards.forEach(function(card) {
-                card.addEventListener(&#39; mouseenter&#39; , function() {
-                        this.style.transform=&#39; translateY(-8px) scale(1.02)&#39; ;
-                    });
+            card.addEventListener('mouseenter', function() { this.style.transform = 'translateY(-8px) scale(1.02)'; });
+            card.addEventListener('mouseleave', function() { this.style.transform = 'translateY(0) scale(1)'; });
+        });
 
-                card.addEventListener(&#39; mouseleave&#39; , function() {
-                        this.style.transform=&#39; translateY(0) scale(1)&#39; ;
-                    });
-            });
-
-        // Picture image click to enlarge
-        const pictureImages=document.querySelectorAll(&#39; .picture-image&#39; );
-
+        const pictureImages = document.querySelectorAll('.picture-image');
         pictureImages.forEach(function(img) {
-                img.addEventListener(&#39; click&#39; , function() {
-                        // Create modal for image viewing
-                        const modal=document.createElement(&#39; div&#39; );
-                        modal.style.cssText=` position: fixed;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: rgba(0, 0, 0, 0.9);
-                        z-index: 10000;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        cursor: pointer;
-                        `;
-
-                        const modalImg=document.createElement(&#39; img&#39; );
-                        modalImg.src=this.src;
-                        modalImg.style.cssText=` max-width: 90%;
-                        max-height: 90%;
-                        object-fit: contain;
-                        border-radius: 10px;
-                        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-                        `;
-
-                        modal.appendChild(modalImg);
-                        document.body.appendChild(modal);
-
-                        // Close modal on click
-                        modal.addEventListener(&#39; click&#39; , function() {
-                                document.body.removeChild(modal);
-                            });
-                    });
+            img.addEventListener('click', function() {
+                const modal = document.createElement('div');
+                modal.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 10000; display: flex; align-items: center; justify-content: center; cursor: pointer;';
+                const modalImg = document.createElement('img');
+                modalImg.src = this.src;
+                modalImg.style.cssText = 'max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 10px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);';
+                modal.appendChild(modalImg);
+                document.body.appendChild(modal);
+                modal.addEventListener('click', function() { document.body.removeChild(modal); });
             });
+        });
     });
-
-</script> <!-- Typing Animation Script --> <script type='text/javascript'>
+//]]>
+</script>
+ <!-- Typing Animation Script --> <script type='text/javascript'>
+//<![CDATA[
     document.addEventListener('DOMContentLoaded', function() {
         const taglineElement = document.getElementById('tagline-text');
         if (!taglineElement) return;
@@ -6927,9 +6833,10 @@ publisher&quot;
 
         typeText();
     });
+//]]>
 </script>
-
-</script> <!-- Hero Slider Navigation Script --> <script type='text/javascript'>
+ <!-- Hero Slider Navigation Script --> <script type='text/javascript'>
+//<![CDATA[
     document.addEventListener('DOMContentLoaded', function() {
         const slides = document.querySelectorAll('.hero-slide');
         const dots = document.querySelectorAll('.slider-dot');
@@ -6985,11 +6892,13 @@ publisher&quot;
             heroSlider.addEventListener('mouseleave', startAutoSlide);
         }
     });
+//]]>
 </script>
-
-</script> <!-- Email Icon Handler Script --> <script type='text/javascript' > document.addEventListener(&#39; DOMContentLoaded&#39; , function() {
-        const emailIconNav=document.getElementById(&#39; email-icon-nav&#39; );
-        const quoteModal=document.getElementById(&#39; quote-modal&#39; );
+ <!-- Email Icon Handler Script --> <script type='text/javascript' >
+//<![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
+        const emailIconNav=document.getElementById('email-icon-nav');
+        const quoteModal=document.getElementById('quote-modal');
         const body=document.body;
 
         // Open quote modal when email icon is clicked
@@ -7001,8 +6910,9 @@ publisher&quot;
                 });
         }
     });
-
+//]]>
 </script> <!-- Contact Form Handler Script --> <script type='text/javascript'>
+//<![CDATA[
     document.addEventListener('DOMContentLoaded', function() {
         const contactForm = document.getElementById('contact-form');
         if (contactForm) {
@@ -7031,9 +6941,9 @@ publisher&quot;
             });
         }
     });
-</script>
-
+//]]>
 </script> <!-- Get Quote Modal Handler Script --> <script type='text/javascript'>
+//<![CDATA[
     document.addEventListener('DOMContentLoaded', function() {
         const getQuoteBtn = document.getElementById('get-quote-btn');
         const quoteModal = document.getElementById('quote-modal');
@@ -7095,9 +7005,11 @@ publisher&quot;
             });
         }
     });
+//]]>
 </script>
 <!-- Email Selection Logic -->
 <script type='text/javascript'>
+//<![CDATA[
 function openEmailSelector(to, subject, body) {
         const selectorModal=document.getElementById('email-selector-modal');
         const gmailBtn=document.getElementById('send-gmail');
@@ -7133,7 +7045,7 @@ function openEmailSelector(to, subject, body) {
                 };
             });
     }
-
+//]]>
 </script>
 <!-- Email Selector Modal -->
 <div class='email-selector-modal' id='email-selector-modal'>
