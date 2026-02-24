@@ -6059,272 +6059,7 @@ p {
 }
 
 
-/* Email Provider Selector Modal Styles */
-.email-selector-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10005;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    align-items: center;
-    justify-content: center;
-}
-
-.email-selector-modal.active {
-    display: flex !important;
-    opacity: 1;
-}
-
-.email-selector-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
-}
-
-.email-selector-container {
-    position: relative;
-    max-width: 450px;
-    width: 90%;
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 35px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-    border: 2px solid #000000;
-    z-index: 10006;
-    transform: scale(0.9);
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    text-align: center;
-}
-
-.email-selector-modal.active .email-selector-container {
-    transform: scale(1);
-}
-
-.email-selector-container h3 {
-    font-family: 'Arial', sans-serif;
-    font-size: 24px;
-    color: #000000;
-    margin-bottom: 10px;
-    font-weight: bold;
-    border: none;
-    padding: 0;
-    background: none;
-}
-
-.email-selector-container p {
-    font-family: 'Arial', sans-serif;
-    color: #666;
-    margin-bottom: 25px;
-    font-size: 15px;
-}
-
-.provider-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.provider-option {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    border-radius: 12px;
-    border: 2px solid #eee;
-    background: #fdfdfd;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    color: #333 !important;
-    font-weight: 600;
-    text-align: left;
-    font-family: 'Arial', sans-serif;
-}
-
-.provider-option:hover {
-    border-color: #000;
-    background: #fff;
-    transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.provider-icon {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    color: white !important;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.provider-gmail { border-left: 5px solid #ea4335; }
-.provider-gmail .provider-icon { background: #ea4335; }
-.provider-outlook { border-left: 5px solid #0078d4; }
-.provider-outlook .provider-icon { background: #0078d4; }
-.provider-yahoo { border-left: 5px solid #410093; }
-.provider-yahoo .provider-icon { background: #410093; }
-.provider-default { border-left: 5px solid #333; }
-.provider-default .provider-icon { background: #333; }
-
-.selector-close {
-    margin-top: 20px;
-    background: transparent;
-    border: none;
-    color: #666;
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 14px;
-    font-family: 'Arial', sans-serif;
-}
-
-.selector-close:hover {
-    color: #000;
-}
-
-
-/* Email Provider Selector Modal Styles */
-.email-selector-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10005;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    align-items: center;
-    justify-content: center;
-}
-
-.email-selector-modal.active {
-    display: flex !important;
-    opacity: 1;
-}
-
-.email-selector-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
-}
-
-.email-selector-container {
-    position: relative;
-    max-width: 450px;
-    width: 90%;
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 35px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-    border: 2px solid #000000;
-    z-index: 10006;
-    transform: scale(0.9);
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    text-align: center;
-}
-
-.email-selector-modal.active .email-selector-container {
-    transform: scale(1);
-}
-
-.email-selector-container h3 {
-    font-family: 'Arial', sans-serif;
-    font-size: 24px;
-    color: #000000;
-    margin-bottom: 10px;
-    font-weight: bold;
-    border: none;
-    padding: 0;
-    background: none;
-}
-
-.email-selector-container p {
-    font-family: 'Arial', sans-serif;
-    color: #666;
-    margin-bottom: 25px;
-    font-size: 15px;
-}
-
-.provider-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.provider-option {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    border-radius: 12px;
-    border: 2px solid #eee;
-    background: #fdfdfd;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    color: #333 !important;
-    font-weight: 600;
-    text-align: left;
-    font-family: 'Arial', sans-serif;
-}
-
-.provider-option:hover {
-    border-color: #000;
-    background: #fff;
-    transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.provider-icon {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    color: white !important;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.provider-gmail { border-left: 5px solid #ea4335; }
-.provider-gmail .provider-icon { background: #ea4335; }
-.provider-outlook { border-left: 5px solid #0078d4; }
-.provider-outlook .provider-icon { background: #0078d4; }
-.provider-yahoo { border-left: 5px solid #410093; }
-.provider-yahoo .provider-icon { background: #410093; }
-.provider-default { border-left: 5px solid #333; }
-.provider-default .provider-icon { background: #333; }
-
-.selector-close {
-    margin-top: 20px;
-    background: transparent;
-    border: none;
-    color: #666;
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 14px;
-    font-family: 'Arial', sans-serif;
-}
-
-.selector-close:hover {
-    color: #000;
-}
+/* Removed email-selector-modal styles */
 
 </style></head><body><b:class cond='data:view.isPreview' name='preview' /><b:class cond='data:view.isSingleItem' name='item-view' /><b:class cond='data:view.isArchive' name='archive-view' /><b:class cond='data:view.isLabelSearch' name='label-view' /><b:class cond='data:view.isSearch and !data:view.isLabelSearch' name='search-view' /><b:class name='version-1-3-3' /><!-- Skip Navigation Hidden --><div class='page'><!-- Consulting Navigation --><nav class='consulting-nav'><div class='nav-container'><div class='nav-logo'><img alt='AR Consulting Engineers Logo' src='https://github.com/AbdullahWali79/ARCosulting/raw/main/arcosultinglogo.jpeg' /></div><div class='mobile-menu-toggle' id='mobile-menu-toggle'><span/><span/><span/></div><ul class='nav-menu' id='nav-menu'><li><a href='/' target='_self'>HOME</a></li><li><a href='/#about-us'>ABOUT US</a></li><li><a href='/#services'>SERVICES</a></li><li><a href='/#contact-us'>CONTACT US</a></li><li><a href='/#blog'>BLOG</a></li></ul><div class='social-icons-nav'><a class='social-icon-nav' href='https://www.facebook.com/ARconsultingengineers/#' target='_blank' title='Facebook'><svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'><path d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z' /></svg></a><a class='social-icon-nav' href='https://www.instagram.com/ar_consulting_engineersanz/' target='_blank' title='Instagram'><svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'><path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z' /></svg></a><a class='social-icon-nav email-icon-nav' href='javascript:void(0);' id='email-icon-nav' title='Email'><svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'><path d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z' /></svg></a><a class='social-icon-nav' href='https://wa.me/61481080412' target='_blank' title='WhatsApp'><svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'><path d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z' /></svg></a></div></div></nav><!-- Consulting Hero Section --><section class='consulting-hero' id='home'><div class='hero-slider'><div class='hero-slide active' /><div class='hero-slide' /><div class='hero-slide' /><button aria-label='Previous slide' class='slider-nav prev' id='slider-prev'>&#8249;
 </button><button aria-label='Next slide' class='slider-nav next' id='slider-next'>&#8250;
@@ -6594,7 +6329,21 @@ publisher&quot;
 }
 
 </style><!-- LINT.ThenChange( //depot/google3/java/com/google/blogger/b2/layouts/widgets/v2-style.css) -->
-    </b:includable> </b:widget> </b:section> </div> </section> <b:section class='sidebar_bottom' id='sidebar_bottom' name='Sidebar (Bottom)' preferred='yes' > <b:widget id='Label1' locked='false' title='Labels' type='Label' visible='true' > <b:widget-settings> <b:widget-setting name='sorting' >ALPHA</b:widget-setting> <b:widget-setting name='display' >LIST</b:widget-setting> <b:widget-setting name='selectedLabelsList' /> <b:widget-setting name='showType' >ALL</b:widget-setting> <b:widget-setting name='showFreqNumbers' >false</b:widget-setting> </b:widget-settings> <b:includable id='main' var='this' > <b:include name='widget-title' /> <b:include name='content' /> </b:includable> <b:includable id='cloud' > <b:loop values='data:labels' var='label' > <span class='label-size' > <b:class expr:name='&quot;label-size-&quot; + data:label.cssSize' /> <a class='label-name' expr:href='data:label.url' > <data:label.name/> <b:if cond='data:this.showFreqNumbers' > <span class='label-count' ><data:label.count/></span> </b:if> </a> </span> </b:loop> </b:includable> <b:includable id='content' > <div class='widget-content' > <b:class expr:name='data:this.display + &quot;-label-widget-content&quot;' /> <b:include cond='data:this.display == &quot;list&quot;' name='list' /> <b:include cond='data:this.display == &quot;cloud&quot;' name='cloud' /> </div> </b:includable> <b:includable id='list' > <ul> <b:loop values='data:labels' var='label' > <li> <a class='label-name' expr:href='data:label.url' > <data:label.name/> <b:if cond='data:this.showFreqNumbers' > <span class='label-count' ><data:label.count/></span> </b:if> </a> </li> </b:loop> </ul> </b:includable> </b:widget> </b:section> <!-- Contact Section --> <section class='consulting-contact' id='contact-us' > <h2>Contact Us</h2> <p>Ready to start your next engineering project? Get in touch with our team of experts for professional consultation and project planning.</p> <div class='contact-cards-container' > <!-- Contact Info Card --> <div class='contact-info-card' > <h3>Get In Touch</h3> <div class='contact-info-item' > <h4>Email Us</h4> <p><a href='mailto:admin@arconsultingengineers.com' >admin@arconsultingengineers.com</a></p> </div> <div class='contact-info-item' > <h4>Contact with WhatsApp</h4> <p><a href='https://wa.me/61481080412' target='_blank' >+61 481 080 412</a></p> </div> <div class='contact-info-item' > <h4>Follow Us</h4> <p> <a href='https://www.facebook.com/ARconsultingengineers/#' target='_blank' >Facebook</a> | <a href='https://www.instagram.com/ar_consulting_engineersanz/' target='_blank' >Instagram</a> </p> </div> </div> <!-- Contact Form Card --> <div class='contact-form-card' > <h3>Drop us a line !</h3> <form class='contact-form' id='contact-form' > <div class='form-group' > <label for='contact-name' >Name</label> <input id='contact-name' name='name' required='required' type='text' /> </div> <div class='form-group' > <label for='contact-email' >Email<span class='required' >*</span></label> <input id='contact-email' name='email' required='required' type='email' /> </div> <div class='form-group' > <label for='contact-message' >Message</label> <textarea id='contact-message' name='message' required='required' rows='5' /> </div> <button class='send-email-btn' type='submit' >Send Email</button> </form> </div> </div> </section> <!-- Footer --> <footer class='consulting-footer' > <p>&#169; 2026 AR Consulting Engineers. All rights reserved.</p> </footer> <!-- Floating Contact Button --> <button class='floating-donation-btn' id='get-quote-btn' type='button' > GET A Quote </button> <!-- Get Quote Modal --> <div class='quote-modal' id='quote-modal' > <div class='quote-modal-overlay' /> <div class='quote-modal-container' > <button class='quote-modal-close' id='quote-modal-close' >&#215; </button> <div class='quote-modal-content' > <h2>Get a Quote</h2> <p>Fill out the form below and we&#39; ll get back to you soon !</p> <form class='quote-form' id='quote-form' > <div class='form-group' > <label for='quote-name' >Name<span class='required' >*</span></label> <input id='quote-name' name='name' required='required' type='text' /> </div> <div class='form-group' > <label for='quote-email' >Email<span class='required' >*</span></label> <input id='quote-email' name='email' required='required' type='email' /> </div> <div class='form-group' > <label for='quote-phone' >Phone Number</label> <input id='quote-phone' name='phone' type='tel' /> </div> <div class='form-group' > <label for='quote-message' >Project Details / Message<span class='required' >*</span></label> <textarea id='quote-message' name='message' required='required' rows='5' /> </div> <button class='send-email-btn' type='submit' >Send Email</button> </form> </div> </div> </div> <!-- Blog Post Link Handler Script -->
+    </b:includable> </b:widget> </b:section> </div> </section> <b:section class='sidebar_bottom' id='sidebar_bottom' name='Sidebar (Bottom)' preferred='yes' > <b:widget id='Label1' locked='false' title='Labels' type='Label' visible='true' > <b:widget-settings> <b:widget-setting name='sorting' >ALPHA</b:widget-setting> <b:widget-setting name='display' >LIST</b:widget-setting> <b:widget-setting name='selectedLabelsList' /> <b:widget-setting name='showType' >ALL</b:widget-setting> <b:widget-setting name='showFreqNumbers' >false</b:widget-setting> </b:widget-settings> <b:includable id='main' var='this' > <b:include name='widget-title' /> <b:include name='content' /> </b:includable> <b:includable id='cloud' > <b:loop values='data:labels' var='label' > <span class='label-size' > <b:class expr:name='&quot;label-size-&quot; + data:label.cssSize' /> <a class='label-name' expr:href='data:label.url' > <data:label.name/> <b:if cond='data:this.showFreqNumbers' > <span class='label-count' ><data:label.count/></span> </b:if> </a> </span> </b:loop> </b:includable> <b:includable id='content' > <div class='widget-content' > <b:class expr:name='data:this.display + &quot;-label-widget-content&quot;' /> <b:include cond='data:this.display == &quot;list&quot;' name='list' /> <b:include cond='data:this.display == &quot;cloud&quot;' name='cloud' /> </div> </b:includable> <b:includable id='list' > <ul> <b:loop values='data:labels' var='label' > <li> <a class='label-name' expr:href='data:label.url' > <data:label.name/> <b:if cond='data:this.showFreqNumbers' > <span class='label-count' ><data:label.count/></span> </b:if> </a> </li> </b:loop> </ul> </b:includable> </b:widget> </b:section> <!-- Contact Section --> <section class='consulting-contact' id='contact-us' > <h2>Contact Us</h2> <p>Ready to start your next engineering project? Get in touch with our team of experts for professional consultation and project planning.</p> <div class='contact-cards-container' > <!-- Contact Info Card --> <div class='contact-info-card' > <h3>Get In Touch</h3> <div class='contact-info-item' > <h4>Email Us</h4> <p><a href='mailto:admin@arconsultingengineers.com' >admin@arconsultingengineers.com</a></p> </div> <div class='contact-info-item' > <h4>Contact with WhatsApp</h4> <p><a href='https://wa.me/61481080412' target='_blank' >+61 481 080 412</a></p> </div> <div class='contact-info-item' > <h4>Follow Us</h4> <p> <a href='https://www.facebook.com/ARconsultingengineers/#' target='_blank' >Facebook</a> | <a href='https://www.instagram.com/ar_consulting_engineersanz/' target='_blank' >Instagram</a> </p> </div> </div> <!-- Contact Form Card --> <div class='contact-form-card' > <h3>Drop us a line !</h3> <form class='contact-form' id='contact-form' > <div class='form-group' > <label for='contact-name' >Name</label> <input id='contact-name' name='name' required='required' type='text' /> </div> <div class='form-group' > <label for='contact-email' >Email<span class='required' >*</span></label> <input id='contact-email' name='email' required='required' type='email' /> </div> <div class='form-group' > <label for='contact-message' >Message</label> <textarea id='contact-message' name='message' required='required' rows='5' /> </div> <button class='send-email-btn' type='submit' >Send Email</button> </form> </div> </div> </section> <!-- Footer --> <footer class='consulting-footer' > <p>&#169; 2026 AR Consulting Engineers. All rights reserved.</p> </footer> <!-- Floating Contact Button --> <button class='floating-donation-btn' id='get-quote-btn' type='button' > GET A Quote </button> <!-- Get Quote Modal --> <div class='quote-modal' id='quote-modal' > <div class='quote-modal-overlay' /> <div class='quote-modal-container' > <button class='quote-modal-close' id='quote-modal-close' >&#215; </button> <div class='quote-modal-content' > <h2>Get a Quote</h2> <p>Fill out the form below and we&#39; ll get back to you soon !</p> <form class='quote-form' id='quote-form' > <div class='form-group' > <label for='quote-name' >Name<span class='required' >*</span></label> <input id='quote-name' name='name' required='required' type='text' /> </div> <div class='form-group' > <label for='quote-email' >Email<span class='required' >*</span></label> <input id='quote-email' name='email' required='required' type='email' /> </div> <div class='form-group' > <label for='quote-phone' >Phone Number</label> <input id='quote-phone' name='phone' type='tel' /> </div> <div class='form-group' > <label for='quote-message' >Project Details / Message<span class='required' >*</span></label> <textarea id='quote-message' name='message' required='required' rows='5' /> </div> <button class='send-email-btn' type='submit' >Send Email</button> </form> </div> </div> </div> <!-- EmailJS SDK Integration -->
+<script src='https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js' type='text/javascript'/>
+<script type='text/javascript'>
+//<![CDATA[
+    (function() {
+        // Initialize EmailJS with your Public Key
+        // Replace 'YOUR_PUBLIC_KEY' with your actual public key from EmailJS dashboard
+        emailjs.init({
+          publicKey: '4-nStwPuSth5snjOA',
+        });
+    })();
+//]]>
+</script>
+
+<!-- Blog Post Link Handler Script -->
 <script type='text/javascript'>
 //<![CDATA[
     document.addEventListener('DOMContentLoaded', function() {
@@ -6933,11 +6682,31 @@ publisher&quot;
                     return;
                 }
 
-                const bodyText = 'Name: ' + name + '\n\nEmail: ' + email + '\n\nMessage:\n' + message;
-                const subject = 'Contact Form Submission from ' + name;
-                openEmailSelector('admin@arconsultingengineers.com', subject, bodyText);
+                const submitBtn = contactForm.querySelector('.send-email-btn');
+                const originalBtnText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
 
-                setTimeout(function() { contactForm.reset(); }, 1000);
+                const templateParams = {
+                    name: name,
+                    email: email,
+                    message: message,
+                    title: 'Contact Form Submission',
+                    to_email: 'admin@arconsultingengineers.com'
+                };
+
+                // Replace 'YOUR_TEMPLATE_ID' with your actual Template ID (e.g., 'template_xxxx')
+                emailjs.send('service_39ykcb2', 'YOUR_TEMPLATE_ID', templateParams)
+                    .then(function() {
+                        alert('Your message has been sent successfully!');
+                        contactForm.reset();
+                    }, function(error) {
+                        alert('FAILED to send message: ' + JSON.stringify(error));
+                    })
+                    .finally(function() {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalBtnText;
+                    });
             });
         }
     });
@@ -6994,84 +6763,37 @@ publisher&quot;
                     return;
                 }
 
-                let bodyText = 'Name: ' + name + '\n\nEmail: ' + email;
-                if (phone) bodyText += '\n\nPhone: ' + phone;
-                bodyText += '\n\nProject Details / Message:\n' + message;
+                const submitBtn = quoteForm.querySelector('.send-email-btn');
+                const originalBtnText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
 
-                const subjectDecoded = 'Quote Request from ' + name;
-                openEmailSelector('admin@arconsultingengineers.com', subjectDecoded, bodyText);
+                const templateParams = {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    message: message,
+                    title: 'Quote Request',
+                    to_email: 'admin@arconsultingengineers.com'
+                };
 
-                setTimeout(function() { closeModal(); quoteForm.reset(); }, 1000);
+                // Replace 'YOUR_TEMPLATE_ID' with your actual Template ID (e.g., 'template_xxxx')
+                emailjs.send('service_39ykcb2', 'YOUR_TEMPLATE_ID', templateParams)
+                    .then(function() {
+                        alert('Your quote request has been sent successfully!');
+                        closeModal();
+                        quoteForm.reset();
+                    }, function(error) {
+                        alert('FAILED to send request: ' + JSON.stringify(error));
+                    })
+                    .finally(function() {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalBtnText;
+                    });
             });
         }
     });
 //]]>
 </script>
-<!-- Email Selection Logic -->
-<script type='text/javascript'>
-//<![CDATA[
-function openEmailSelector(to, subject, body) {
-        const selectorModal=document.getElementById('email-selector-modal');
-        const gmailBtn=document.getElementById('send-gmail');
-        const outlookBtn=document.getElementById('send-outlook');
-        const yahooBtn=document.getElementById('send-yahoo');
-        const defaultBtn=document.getElementById('send-default');
-        const closeBtn=document.getElementById('selector-close');
-        const overlay=document.getElementById('email-selector-overlay');
-
-        if (!selectorModal) return;
-
-        // Construct links
-        const subjectEnc=encodeURIComponent(subject);
-        const bodyEnc=encodeURIComponent(body);
-
-        gmailBtn.href='https://mail.google.com/mail/?view=cm&fs=1&to=' + to + '&su=' + subjectEnc + '&body=' + bodyEnc;
-        outlookBtn.href='https://outlook.live.com/mail/0/deeplink/compose?to=' + to + '&subject=' + subjectEnc + '&body=' + bodyEnc;
-        yahooBtn.href='https://compose.mail.yahoo.com/?to=' + to + '&subj=' + subjectEnc + '&body=' + bodyEnc;
-        defaultBtn.href='mailto:' + to + '?subject=' + subjectEnc + '&body=' + bodyEnc;
-
-        // Show modal
-        selectorModal.classList.add('active');
-
-        // Close logic
-        const closeModal=() => selectorModal.classList.remove('active');
-        closeBtn.onclick=closeModal;
-        overlay.onclick=closeModal;
-
-        // Close on option click
-        [gmailBtn, outlookBtn, yahooBtn, defaultBtn].forEach(btn => {
-                btn.onclick=() => {
-                    setTimeout(closeModal, 500);
-                };
-            });
-    }
-//]]>
-</script>
-<!-- Email Selector Modal -->
-<div class='email-selector-modal' id='email-selector-modal'>
-    <div class='email-selector-overlay' id='email-selector-overlay'></div>
-    <div class='email-selector-container'>
-        <h3>Choose Email Service</h3>
-        <p>How would you like to send your message?</p>
-        <div class='provider-list'>
-            <a href='#' class='provider-option provider-gmail' id='send-gmail'>
-                <div class='provider-icon'>M</div>
-                <span>Gmail (Web)</span>
-            </a>
-            <a href='#' class='provider-option provider-outlook' id='send-outlook'>
-                <div class='provider-icon'>O</div>
-                <span>Outlook / Hotmail</span>
-            </a>
-            <a href='#' class='provider-option provider-yahoo' id='send-yahoo'>
-                <div class='provider-icon'>Y</div>
-                <span>Yahoo Mail</span>
-            </a>
-            <a href='#' class='provider-option provider-default' id='send-default'>
-                <div class='provider-icon'>E</div>
-                <span>Default Email App</span>
-            </a>
-        </div>
-        <button class='selector-close' id='selector-close'>Cancel</button>
-    </div>
-</div>
+<!-- Removed Email Selector Modal HTML -->
 </div> </body> </html>
