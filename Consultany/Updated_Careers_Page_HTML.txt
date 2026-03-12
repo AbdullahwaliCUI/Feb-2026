@@ -1,4 +1,4 @@
-<!-- Careers / Apply Section Styles -->
+<!--Careers / Apply Section Styles-->
 <style>
 .careers-page {
     font-family: 'Arial', sans-serif;
@@ -229,27 +229,25 @@
 }
 </style>
 
-<!-- Careers / Apply Section HTML -->
+<!--Careers / Apply Section HTML-->
 <div class="careers-page">
     
     <div class="careers-header">
         <h1>Join Our Team</h1>
-        <p>Freelancers & Professionals Welcome</p>
     </div>
 
-    <!-- Job Tabs -->
+    <!--Job Tabs-->
     <div class="job-tabs">
         <button class="job-tab active" onclick="openJob(event, 'job1')">Casual Structural Drafter</button>
-        <button class="job-tab" onclick="openJob(event, 'job2')">Civil Engineer (Freelance)</button>
-        <button class="job-tab" onclick="openJob(event, 'job3')">Structural Engineer</button>
+&nbsp;<button class="job-tab" onclick="openJob(event, 'job3')">Structural Engineer</button>
     </div>
 
     <div class="careers-content">
-        <!-- Job Descriptions Area -->
+        <!--Job Descriptions Area-->
         <div class="job-description">
             
-            <!-- Job 1 -->
-            <div id="job1" class="tab-content active">
+            <!--Job 1-->
+            <div class="tab-content active" id="job1">
                 <h2>Casual Structural Drafter</h2>
                 <p><strong>Location:</strong> Remote</p>
                 <p><strong>Rate:</strong> Competitive Hourly Rate (Based on experience)</p>
@@ -264,30 +262,12 @@
                     <li>Work directly with our Chartered Structural Engineers to translate sketches and calculations into 2D/3D plans.</li>
                     <li>Develop reinforced concrete, structural steel, and timber framing details.</li>
                     <li>Ensure all drawings comply with AS1100 and relevant Australian building codes.</li>
-                    <li>Manage revisions and redline markups with high accuracy and fast turnaround.</li>
+                    <li>Manage revisions and redline markups with high accuracy and fast turnaround.</li></ul></div><div class="tab-content" id="job2"><ul>
                 </ul>
             </div>
 
-            <!-- Job 2 -->
-            <div id="job2" class="tab-content">
-                <h2>Civil Engineer (Freelance)</h2>
-                <p><strong>Location:</strong> Remote / Project Basis</p>
-                <p><strong>Rate:</strong> Project Based</p>
-                
-                <h3>About the Role</h3>
-                <p>(Waiting for detailed description from client...)</p>
-                <p>We are seeking an experienced Civil Engineer to support our ongoing infrastructure and land development projects. You will be responsible for site planning, drainage design, and compliance reporting.</p>
-                
-                <h3>Typical Tasks:</h3>
-                <ul>
-                    <li>Stormwater management design.</li>
-                    <li>Road and pavement design.</li>
-                    <li>Site inspections and reporting.</li>
-                </ul>
-            </div>
-
-            <!-- Job 3 -->
-            <div id="job3" class="tab-content">
+            <!--Job 3-->
+            <div class="tab-content" id="job3">
                 <h2>Structural Engineer</h2>
                 <p><strong>Location:</strong> Remote</p>
                 <p><strong>Experience Level:</strong> 3–7 Years</p>
@@ -298,7 +278,7 @@
                 
                 <h3>What You’ll Do</h3>
                 <ul>
-                    <li><strong>Design & Analysis:</strong> Perform gravity and lateral analysis for buildings using industry-standard software (RISA, ETABS, or RAM).</li>
+                    <li><strong>Design &amp; Analysis:</strong> Perform gravity and lateral analysis for buildings using industry-standard software (RISA, ETABS, or RAM).</li>
                     <li><strong>Blueprint Mastery:</strong> Prepare structural drawings, specifications, and reports that serve as the backbone of our projects.</li>
                     <li><strong>Collaborate:</strong> Work side-by-side with architects, MEP engineers, and contractors to ensure a seamless "buildable" design.</li>
                     <li><strong>Field Work:</strong> Conduct site visits and structural observations to ensure construction aligns with the vision.</li>
@@ -320,28 +300,28 @@
                     <li><strong>Impact:</strong> Work on high-profile projects that shape the local community.</li>
                 </ul>
 
-                <hr/>
+                <hr />
                 <p><strong>How to Apply:</strong> If you’re ready to build something lasting, send your resume and a brief portfolio of your best work to our team.</p>
             </div>
             
         </div>
 
-        <!-- Application Form Column -->
+        <!--Application Form Column-->
         <div class="apply-form-container">
             <h2>Apply Now</h2>
             <p>Select your desired role and send your application details.</p>
             
-            <form action="https://formsubmit.co/admin@arconsultingengineers.com" method="POST" enctype="multipart/form-data" class="apply-form" id="careersApplyForm">
+            <form action="https://formsubmit.co/admin@arconsultingengineers.com" class="apply-form" enctype="multipart/form-data" id="careersApplyForm" method="POST">
                 
-                <input type="hidden" name="_captcha" value="false">
-                <!-- Subject will be updated by script below -->
-                <input type="hidden" name="_subject" id="formSubject" value="New Job Application">
-                <input type="hidden" name="_next" value="https://www.arconsultingengineers.com/">
+                <input name="_captcha" type="hidden" value="false" />
+                <!--Subject will be updated by script below-->
+                <input id="formSubject" name="_subject" type="hidden" value="New Job Application" />
+                <input name="_next" type="hidden" value="https://www.arconsultingengineers.com/" />
                 
                 <div class="form-group">
-                    <label for="jobTitle">Position Applying For *</label>
-                    <select id="jobTitle" name="Job Title" required onchange="updateSubject()">
-                        <option value="" disabled selected>Select a position...</option>
+                    <label>Position Applying For *</label>
+                    <select id="jobTitle" name="Job Title" onchange="updateSubject()" required="">
+                        <option disabled="" selected="" value="">Select a position...</option>
                         <option value="Casual Structural Drafter">Casual Structural Drafter</option>
                         <option value="Civil Engineer (Freelance)">Civil Engineer (Freelance)</option>
                         <option value="Structural Engineer">Structural Engineer</option>
@@ -349,29 +329,29 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="fullName">Full Name *</label>
-                    <input type="text" id="fullName" name="Full Name" required placeholder="John Doe">
+                    <label>Full Name *</label>
+                    <input id="fullName" name="Full Name" required="" type="text" />
                 </div>
 
                 <div class="form-group">
-                    <label for="emailAddr">Email Address *</label>
-                    <input type="email" id="emailAddr" name="Email" required placeholder="john@example.com">
+                    <label>Email Address *</label>
+                    <input id="emailAddr" name="Email" placeholder="john@example.com" required="" type="email" />
                 </div>
 
                 <div class="form-group">
-                    <label for="phoneNum">Phone Number</label>
-                    <input type="tel" id="phoneNum" name="Phone" placeholder="+61 ...">
+                    <label>Phone Number</label>
+                    <input id="phoneNum" name="Phone" placeholder="+61 ..." type="tel" />
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="Message" rows="5" required placeholder="Tell us briefly about your experience..."></textarea>
+                    <label>Message *</label>
+                    <textarea id="message" name="Message" required="" rows="5"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Upload CV / Portfolio (PDF, DOCX) *</label>
                     <div class="file-upload-wrapper">
-                        <input type="file" name="attachment_cv" accept=".pdf,.doc,.docx" required>
+                        <input accept=".pdf,.doc,.docx" name="attachment_cv" required="" type="file" />
                         <p>Click here or drag to upload CV</p>
                     </div>
                 </div>
@@ -379,12 +359,12 @@
                 <div class="form-group">
                     <label>Upload Cover Letter (PDF, DOCX)</label>
                     <div class="file-upload-wrapper">
-                        <input type="file" name="attachment_cover_letter" accept=".pdf,.doc,.docx">
+                        <input accept=".pdf,.doc,.docx" name="attachment_cover_letter" type="file" />
                         <p>Click here or drag to upload Cover Letter</p>
                     </div>
                 </div>
 
-                <button type="submit" class="submit-btn" id="submitFormBtn">Send Application</button>
+                <button class="submit-btn" id="submitFormBtn" type="submit">Send Application</button>
             </form>
         </div>
     </div>
