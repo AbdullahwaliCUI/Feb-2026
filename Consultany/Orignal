@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='adam-azam-blogger.xml' b:templateVersion='1.3.3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'><head><meta content='width=device-width, initial-scale=1' name='viewport'/><title><data:view.title.escaped/></title><b:include data='blog' name='all-head-content'/><b:skin version='1.3.3'><![CDATA[
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='ar-consulting-blogger.xml' b:templateVersion='1.3.3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'><head><meta content='width=device-width, initial-scale=1' name='viewport'/><title><data:view.title.escaped/></title><link href='https://github.com/AbdullahWali79/ARCosulting/raw/main/arcosultinglogo.jpeg?v=1.1' rel='icon' type='image/jpeg'/><link href='https://github.com/AbdullahWali79/ARCosulting/raw/main/arcosultinglogo.jpeg?v=1.1' rel='shortcut icon' type='image/jpeg'/><link href='https://github.com/AbdullahWali79/ARCosulting/raw/main/arcosultinglogo.jpeg?v=1.1' rel='apple-touch-icon' type='image/jpeg'/><b:include data='blog' name='all-head-content'/><b:skin version='1.3.3'><![CDATA[
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
@@ -3876,7 +3876,6 @@ a[href=&quot;
 }
 
 /* Hide other sections on individual post pages */
-.item-view .consulting-nav,
 .item-view .consulting-hero,
 .item-view .consulting-about,
 .item-view .consulting-services,
@@ -3963,20 +3962,7 @@ a[href=&quot;
     visibility: visible !important;
 }
 
-/* Adam Azam specific image centering */
-.picture-card:last-child .picture-image {
-    object-position: center center;
-    object-fit: cover;
-}
 
-/* Target Adam Azam&#39;s image specifically */
-img[alt*=&quot;
-Adam Azam&quot;
-
-] {
-    object-position: center center !important;
-    object-fit: cover !important;
-}
 
 .picture-card:hover .picture-image {
     transform: scale(1.05);
@@ -4012,7 +3998,6 @@ Adam Azam&quot;
 }
 
 /* Hide other sections on pictures page */
-.pictures-page .consulting-nav,
 .pictures-page .consulting-hero,
 .pictures-page .consulting-about,
 .pictures-page .consulting-services,
@@ -4125,7 +4110,6 @@ Adam Azam&quot;
 }
 
 /* Hide other sections on videos page */
-.videos-page .consulting-nav,
 .videos-page .consulting-hero,
 .videos-page .consulting-about,
 .videos-page .consulting-services,
@@ -4151,7 +4135,6 @@ Adam Azam&quot;
 }
 
 /* Hide all other sections on gallery page */
-.gallery-page .consulting-nav,
 .gallery-page .consulting-hero,
 .gallery-page .consulting-about,
 .gallery-page .consulting-services,
@@ -6061,274 +6044,35 @@ p {
 }
 
 
-/* Email Provider Selector Modal Styles */
-.email-selector-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10005;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    align-items: center;
-    justify-content: center;
-}
+/* Removed email-selector-modal styles */
 
-.email-selector-modal.active {
-    display: flex !important;
-    opacity: 1;
-}
+/* Careers / Apply Section Styles */
+.careers-page { font-family: &#39;Arial&#39;, sans-serif; color: #000000; max-width: 1000px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+.careers-header { text-align: center; margin-bottom: 40px; }
+.careers-header h1 { font-size: 36px; color: #000000; margin-bottom: 10px; }
+.careers-content { display: flex; flex-wrap: wrap; gap: 40px; background: #f9f9f9; padding: 30px; border-top: 3px solid #ffd700; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.job-description { flex: 1; min-width: 300px; }
+.job-description h2 { font-size: 24px; color: #000000; border-bottom: 2px solid #ffd700; padding-bottom: 10px; margin-bottom: 20px; }
+.job-description h3 { font-size: 18px; color: #333; margin-top: 20px; }
+.job-description ul { padding-left: 20px; }
+.job-description li { margin-bottom: 10px; }
+.apply-form-container { flex: 1; min-width: 300px; background: #ffffff; padding: 30px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+.apply-form-container h2 { font-size: 24px; margin-top: 0; margin-bottom: 20px; color: #000000; }
+.apply-form { display: flex; flex-direction: column; gap: 15px; }
+.form-group { display: flex; flex-direction: column; }
+.form-group label { font-weight: bold; margin-bottom: 5px; font-size: 14px; }
+.form-group input, .form-group textarea { padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 14px; }
+.form-group input:focus, .form-group textarea:focus { border-color: #ffd700; outline: none; box-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+.file-upload-wrapper { position: relative; border: 2px dashed #ccc; padding: 20px; text-align: center; border-radius: 4px; background: #fdfdfd; cursor: pointer; transition: all 0.3s ease; }
+.file-upload-wrapper:hover { border-color: #ffd700; background: #fffdf0; }
+.file-upload-wrapper input[type=&quot;file&quot;] { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.file-upload-wrapper p { margin: 0; color: #666; font-size: 14px; }
+.submit-btn { background: #ffd700; color: #000; border: 2px solid #000; padding: 12px 24px; font-size: 16px; font-weight: bold; cursor: pointer; border-radius: 4px; transition: all 0.3s ease; margin-top: 10px; }
+.submit-btn:hover { background: #000; color: #ffd700; }
+@media (max-width: 768px) { .careers-content { flex-direction: column; padding: 20px; } }
 
-.email-selector-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
-}
-
-.email-selector-container {
-    position: relative;
-    max-width: 450px;
-    width: 90%;
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 35px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-    border: 2px solid #000000;
-    z-index: 10006;
-    transform: scale(0.9);
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    text-align: center;
-}
-
-.email-selector-modal.active .email-selector-container {
-    transform: scale(1);
-}
-
-.email-selector-container h3 {
-    font-family: &#39;Arial&#39;, sans-serif;
-    font-size: 24px;
-    color: #000000;
-    margin-bottom: 10px;
-    font-weight: bold;
-    border: none;
-    padding: 0;
-    background: none;
-}
-
-.email-selector-container p {
-    font-family: &#39;Arial&#39;, sans-serif;
-    color: #666;
-    margin-bottom: 25px;
-    font-size: 15px;
-}
-
-.provider-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.provider-option {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    border-radius: 12px;
-    border: 2px solid #eee;
-    background: #fdfdfd;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    color: #333 !important;
-    font-weight: 600;
-    text-align: left;
-    font-family: &#39;Arial&#39;, sans-serif;
-}
-
-.provider-option:hover {
-    border-color: #000;
-    background: #fff;
-    transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.provider-icon {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    color: white !important;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.provider-gmail { border-left: 5px solid #ea4335; }
-.provider-gmail .provider-icon { background: #ea4335; }
-.provider-outlook { border-left: 5px solid #0078d4; }
-.provider-outlook .provider-icon { background: #0078d4; }
-.provider-yahoo { border-left: 5px solid #410093; }
-.provider-yahoo .provider-icon { background: #410093; }
-.provider-default { border-left: 5px solid #333; }
-.provider-default .provider-icon { background: #333; }
-
-.selector-close {
-    margin-top: 20px;
-    background: transparent;
-    border: none;
-    color: #666;
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 14px;
-    font-family: &#39;Arial&#39;, sans-serif;
-}
-
-.selector-close:hover {
-    color: #000;
-}
-
-
-/* Email Provider Selector Modal Styles */
-.email-selector-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10005;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    align-items: center;
-    justify-content: center;
-}
-
-.email-selector-modal.active {
-    display: flex !important;
-    opacity: 1;
-}
-
-.email-selector-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
-}
-
-.email-selector-container {
-    position: relative;
-    max-width: 450px;
-    width: 90%;
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 35px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-    border: 2px solid #000000;
-    z-index: 10006;
-    transform: scale(0.9);
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    text-align: center;
-}
-
-.email-selector-modal.active .email-selector-container {
-    transform: scale(1);
-}
-
-.email-selector-container h3 {
-    font-family: &#39;Arial&#39;, sans-serif;
-    font-size: 24px;
-    color: #000000;
-    margin-bottom: 10px;
-    font-weight: bold;
-    border: none;
-    padding: 0;
-    background: none;
-}
-
-.email-selector-container p {
-    font-family: &#39;Arial&#39;, sans-serif;
-    color: #666;
-    margin-bottom: 25px;
-    font-size: 15px;
-}
-
-.provider-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.provider-option {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    border-radius: 12px;
-    border: 2px solid #eee;
-    background: #fdfdfd;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    color: #333 !important;
-    font-weight: 600;
-    text-align: left;
-    font-family: &#39;Arial&#39;, sans-serif;
-}
-
-.provider-option:hover {
-    border-color: #000;
-    background: #fff;
-    transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.provider-icon {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    color: white !important;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.provider-gmail { border-left: 5px solid #ea4335; }
-.provider-gmail .provider-icon { background: #ea4335; }
-.provider-outlook { border-left: 5px solid #0078d4; }
-.provider-outlook .provider-icon { background: #0078d4; }
-.provider-yahoo { border-left: 5px solid #410093; }
-.provider-yahoo .provider-icon { background: #410093; }
-.provider-default { border-left: 5px solid #333; }
-.provider-default .provider-icon { background: #333; }
-
-.selector-close {
-    margin-top: 20px;
-    background: transparent;
-    border: none;
-    color: #666;
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 14px;
-    font-family: &#39;Arial&#39;, sans-serif;
-}
-
-.selector-close:hover {
-    color: #000;
-}
-
-</style></head><body><b:class cond='data:view.isPreview' name='preview'/><b:class cond='data:view.isSingleItem' name='item-view'/><b:class cond='data:view.isArchive' name='archive-view'/><b:class cond='data:view.isLabelSearch' name='label-view'/><b:class cond='data:view.isSearch and !data:view.isLabelSearch' name='search-view'/><b:class name='version-1-3-3'/><!-- Skip Navigation Hidden --><div class='page'><!-- Consulting Navigation --><nav class='consulting-nav'><div class='nav-container'><div class='nav-logo'><img alt='AR Consulting Engineers Logo' src='https://github.com/AbdullahWali79/ARCosulting/raw/main/arcosultinglogo.jpeg'/></div><div class='mobile-menu-toggle' id='mobile-menu-toggle'><span/><span/><span/></div><ul class='nav-menu' id='nav-menu'><li><a href='/' target='_self'>HOME</a></li><li><a href='/#about-us'>ABOUT US</a></li><li><a href='/#services'>SERVICES</a></li><li><a href='/#contact-us'>CONTACT US</a></li><li><a href='/#blog'>BLOG</a></li></ul><div class='social-icons-nav'><a class='social-icon-nav' href='https://www.facebook.com/ARconsultingengineers/#' target='_blank' title='Facebook'><svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'><path d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'/></svg></a><a class='social-icon-nav' href='https://www.instagram.com/ar_consulting_engineersanz/' target='_blank' title='Instagram'><svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'><path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z'/></svg></a><a class='social-icon-nav email-icon-nav' href='javascript:void(0);' id='email-icon-nav' title='Email'><svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'><path d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/></svg></a><a class='social-icon-nav' href='https://wa.me/61481080412' target='_blank' title='WhatsApp'><svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'><path d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z'/></svg></a></div></div></nav><!-- Consulting Hero Section --><section class='consulting-hero' id='home'><div class='hero-slider'><div class='hero-slide active'/><div class='hero-slide'/><div class='hero-slide'/><button aria-label='Previous slide' class='slider-nav prev' id='slider-prev'>&#8249;
+</style>
+</head><body><b:class cond='data:view.isPreview' name='preview'/><b:class cond='data:view.isSingleItem' name='item-view'/><b:class cond='data:view.isArchive' name='archive-view'/><b:class cond='data:view.isLabelSearch' name='label-view'/><b:class cond='data:view.isSearch and !data:view.isLabelSearch' name='search-view'/><b:class name='version-1-3-3'/><!-- Skip Navigation Hidden --><div class='page'><!-- Consulting Navigation --><nav class='consulting-nav'><div class='nav-container'><div class='nav-logo'><a href='https://www.arconsultingengineers.com/'><img alt='AR Consulting Engineers Logo' src='https://github.com/AbdullahWali79/ARCosulting/raw/main/arcosultinglogo.jpeg'/></a></div><div class='mobile-menu-toggle' id='mobile-menu-toggle'><span/><span/><span/></div><ul class='nav-menu' id='nav-menu'><li><a href='/' target='_self'>HOME</a></li><li><a href='/#about-us'>ABOUT US</a></li><li><a href='/#services'>SERVICES</a></li><li><a href='/p/careers.html'>CAREERS</a></li><li><a href='/#contact-us'>CONTACT US</a></li><li><a href='/#blog'>BLOG</a></li></ul><div class='social-icons-nav'><a class='social-icon-nav' href='https://www.facebook.com/ARconsultingengineers/#' target='_blank' title='Facebook'><svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'><path d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'/></svg></a><a class='social-icon-nav' href='https://www.instagram.com/ar_consulting_engineersanz/' target='_blank' title='Instagram'><svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'><path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z'/></svg></a><a class='social-icon-nav email-icon-nav' href='javascript:void(0);' id='email-icon-nav' title='Email'><svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'><path d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/></svg></a><a class='social-icon-nav' href='https://wa.me/61481080412' target='_blank' title='WhatsApp'><svg fill='currentColor' height='20' viewBox='0 0 24 24' width='20'><path d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z'/></svg></a></div></div></nav><b:if cond='data:view.isHomepage'><!-- Consulting Hero Section --><section class='consulting-hero' id='home'><div class='hero-slider'><div class='hero-slide active'/><div class='hero-slide'/><div class='hero-slide'/><button aria-label='Previous slide' class='slider-nav prev' id='slider-prev'>&#8249;
 </button><button aria-label='Next slide' class='slider-nav next' id='slider-next'>&#8250;
 </button><div class='slider-dots' id='slider-dots'><span class='slider-dot active' data-slide='0'/><span class='slider-dot' data-slide='1'/><span class='slider-dot' data-slide='2'/></div></div><div class='consulting-hero-content'><div class='typing-container'><h1>AR Consulting Engineers</h1><div class='animated-tagline'><span class='tagline-text' id='tagline-text'/><span class='tagline-cursor'/></div></div><div class='subtitle'>Professional Engineering Solutions</div><div class='slogan'>EXCELLENCE IN ENGINEERING</div><div class='cta-buttons'><a class='cta-button secondary' href='#contact-us'>GET A Quote</a><a class='cta-button secondary' href='#about-us'>LEARN MORE</a></div></div></section><!-- About Us Section --><section class='consulting-about' id='about-us'><div class='consulting-about-content'><h2>About AR Consulting Engineers</h2><div class='consulting-about-text'><h3>Professional Engineering Excellence</h3><p>AR Consulting Engineers is a leading engineering consultancy firm specializing in providing innovative solutions for complex engineering challenges across various industries.</p><p>With years of experience and a team of highly qualified engineers,
 we deliver comprehensive engineering services that meet the highest standards of quality and safety.</p><p>Our commitment to excellence and client satisfaction has made us a trusted partner for engineering projects worldwide.</p></div><div class='consulting-about-image'><img alt='AR Consulting Engineers - Professional Engineering Services' src='https://raw.githubusercontent.com/AbdullahWali79/consultancy_images/main/third.webp'/></div></div></section><!-- Services Section --><section class='consulting-services' id='services'><h2>Our Services</h2><div class='services-grid'><a class='service-card-link' href='/p/structural-engineering.html'><div class='service-card'><div class='service-image'><img alt='Structural Engineering' src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80'/></div><div class='service-content'><h3>Structural Engineering</h3><p style='color: #ffffff !important;'>Comprehensive structural analysis and design services for residential,
@@ -6338,7 +6082,7 @@ road design,
 water systems,
 and urban planning solutions.</p></div></div></a><a class='service-card-link' href='/p/consulting-services.html'><div class='service-card'><div class='service-image'><img alt='Consulting Services' src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80'/></div><div class='service-content'><h3>Consulting Services</h3><p style='color: #ffffff !important;'>Expert consultation on engineering challenges,
 feasibility studies,
-and technical advisory services.</p></div></div></a></div></section><!-- Service Detail Section --><section class='service-detail-section' id='service-structural-engineering'><div class='service-detail-container'><div class='service-detail-navigation'><a class='service-back-link' href='/#services'>&#8592;
+and technical advisory services.</p></div></div></a></div></section></b:if><!-- Service Detail Section --><section class='service-detail-section' id='service-structural-engineering'><div class='service-detail-container'><div class='service-detail-navigation'><a class='service-back-link' href='/#services'>&#8592;
 Back to Services</a></div><div class='service-detail-header'><div class='service-detail-header-buttons'><button class='service-detail-close' onclick='closeServiceDetail()'>&#215;
 </button></div><h1 class='service-detail-title'>Structural Engineering</h1><h2 class='service-detail-subtitle'>Designing Strength,
 Stability,
@@ -6466,13 +6210,12 @@ t just managed &#8212;
 it&#39;
 s cared for,
 protected,
-and delivered with precision.</p><div class='service-detail-contact-button'><a class='service-contact-btn' href='https://wa.me/61481080412' target='_blank'>Contact Us</a></div></div></div></section><!-- Pictures Section --><section class='pictures-section'><div class='pictures-container'><a class='back-to-home' href='/'>&#8592;
-Back to Home</a><h2>Meet Adam Azam Friends</h2><div class='pictures-grid'><div class='picture-card'><img alt='Tony Avella' class='picture-image' src='https://github.com/adamazam2749-cmyk/adam-azam-imagess/raw/main/Tony%20Avella.jpg'/><div class='picture-content'><h3 class='picture-title'>Tony Avella</h3><p class='picture-description'>Meeting with community leaders and supporters.</p></div></div><div class='picture-card'><img alt='Tom Kaminsky' class='picture-image' src='https://github.com/adamazam2749-cmyk/adam-azam-imagess/raw/main/Tom%20Kaminsky.PNG'/><div class='picture-content'><h3 class='picture-title'>Tom Kaminsky</h3><p class='picture-description'>Engaging with voters and discussing key issues.</p></div></div><div class='picture-card'><img alt='Sheila Jackson' class='picture-image' src='https://github.com/adamazam2749-cmyk/adam-azam-imagess/raw/main/Sheila%20Jackson.PNG'/><div class='picture-content'><h3 class='picture-title'>Sheila Jackson</h3><p class='picture-description'>Campaign event with community advocates.</p></div></div><div class='picture-card'><img alt='Riaz Babar' class='picture-image' src='https://github.com/adamazam2749-cmyk/adam-azam-imagess/raw/main/Riaz%20Babar%20in%20blue%20coat%20and%20Washington%20Senator.PNG'/><div class='picture-content'><h3 class='picture-title'>Riaz Babar in Blue Coat and Washington Senator</h3><p class='picture-description'>Official meeting at the state capitol.</p></div></div><div class='picture-card'><img alt='Rafi Shah (Director Union Policies) in United Nations' class='picture-image' src='https://github.com/adamazam2749-cmyk/adam-azam-imagess/raw/main/Rafi%20Shah%20(Director%20Union%20Policies)%20in%20United%20Nations.PNG'/><div class='picture-content'><h3 class='picture-title'>Rafi Shah (Director Union Policies) in United Nations</h3><p class='picture-description'>International policy discussion and collaboration.</p></div></div><div class='picture-card'><img alt='Campaign Event 1' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.47%20PM%20(1).jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 1</h3><p class='picture-description'>Important campaign meeting and discussion.</p></div></div><div class='picture-card'><img alt='Campaign Event 2' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.47%20PM%20(3).jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 2</h3><p class='picture-description'>Community engagement and voter outreach.</p></div></div><div class='picture-card'><img alt='Campaign Event 3' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.47%20PM%20(4).jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 3</h3><p class='picture-description'>Strategic planning and policy development.</p></div></div><div class='picture-card'><img alt='Campaign Event 4' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.47%20PM%20(7).jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 4</h3><p class='picture-description'>Community outreach and engagement activities.</p></div></div><div class='picture-card'><img alt='Campaign Event 5' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.47%20PM.jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 5</h3><p class='picture-description'>Voter engagement and community discussion.</p></div></div><div class='picture-card'><img alt='Campaign Event 6' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.48%20PM%20(1).jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 6</h3><p class='picture-description'>Policy discussion and strategic planning.</p></div></div><div class='picture-card'><img alt='Campaign Event 7' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.48%20PM%20(2).jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 7</h3><p class='picture-description'>Community leadership and collaboration.</p></div></div><div class='picture-card'><img alt='Campaign Event 8' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.48%20PM%20(3).jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 8</h3><p class='picture-description'>Public engagement and voter outreach.</p></div></div><div class='picture-card'><img alt='Campaign Event 9' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.48%20PM%20(5).jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 9</h3><p class='picture-description'>Community building and relationship development.</p></div></div><div class='picture-card'><img alt='Campaign Event 10' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.48%20PM%20(6).jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 10</h3><p class='picture-description'>Strategic partnerships and alliances.</p></div></div><div class='picture-card'><img alt='Campaign Event 11' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.48%20PM%20(8).jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 11</h3><p class='picture-description'>Community advocacy and support.</p></div></div><div class='picture-card'><img alt='Campaign Event 12' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.48%20PM%20(9).jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 12</h3><p class='picture-description'>Leadership development and mentorship.</p></div></div><div class='picture-card'><img alt='Campaign Event 13' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.48%20PM.jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 13</h3><p class='picture-description'>Public service and community engagement.</p></div></div><div class='picture-card'><img alt='Campaign Event 14' class='picture-image' src='https://github.com/adamazam2749-cmyk/NovImages2026/raw/main/WhatsApp%20Image%202026-10-18%20at%209.25.49%20PM%20(10).jpeg'/><div class='picture-content'><h3 class='picture-title'>Campaign Event 14</h3><p class='picture-description'>Building bridges and fostering unity.</p></div></div></div></div></section><!-- Videos Section --><section class='videos-section'><div class='videos-container'><a class='back-to-home' href='/'>&#8592;
-Back to Home</a><h2>Campaign Videos</h2><div class='videos-grid'><div class='video-card'><iframe allowfullscreen='true' class='video-embed' frameborder='0' src='https://www.youtube.com/embed/Wo4qeHorCTA'/><div class='video-content'><h3 class='video-title'>Campaign Video 1</h3><p class='video-description'>Latest campaign video featuring Adam Azam.</p></div></div><div class='video-card'><iframe allowfullscreen='true' class='video-embed' frameborder='0' src='https://www.youtube.com/embed/IAyevM7Pb-w'/><div class='video-content'><h3 class='video-title'>Campaign Video 2</h3><p class='video-description'>Additional campaign content and updates.</p></div></div><div class='video-card'><iframe allowfullscreen='true' class='video-embed' frameborder='0' src='https://www.youtube.com/embed/2Hb74n_Q1d8'/><div class='video-content'><h3 class='video-title'>Campaign Introduction</h3><p class='video-description'>Adam Azam introduces his campaign for New York State Senate 2026.</p></div></div><div class='video-card'><iframe allowfullscreen='true' class='video-embed' frameborder='0' src='https://www.youtube.com/embed/dUxqnU9aEgQ'/><div class='video-content'><h3 class='video-title'>Campaign Short</h3><p class='video-description'>Quick campaign update and message from Adam Azam.</p></div></div></div></div></section><!-- Blog Section --><section class='blog-section' id='blog'><h2>Latest Engineering News &amp;
-Insights</h2><div class='blog-posts-container'><b:section class='main' id='page_body' name='Page Body' showaddelement='false'>
-  <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+and delivered with precision.</p><div class='service-detail-contact-button'><a class='service-contact-btn' href='https://wa.me/61481080412' target='_blank'>Contact Us</a></div></div></div></section><!-- Blog Section --><section class='blog-section' id='blog'><b:if cond='data:view.isHomepage'><h2>Latest Engineering News &amp;
+Insights</h2></b:if><div class='blog-posts-container'><b:section class='main' id='page_body' name='Page Body' showaddelement='false'>
+  <b:widget id='Blog1' locked='true' max-results='7' title='Blog Posts' type='Blog' version='2' visible='true'>
     <b:widget-settings>
       <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+      <b:widget-setting name='max-results'>7</b:widget-setting>
       <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
       <b:widget-setting name='showShareButtons'>true</b:widget-setting>
       <b:widget-setting name='showCommentLink'>true</b:widget-setting>
@@ -6494,8 +6237,9 @@ Insights</h2><div class='blog-posts-container'><b:section class='main' id='page_
       <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
       <b:widget-setting name='showInlineAds'>true</b:widget-setting>
       <b:widget-setting name='showReactions'>false</b:widget-setting>
+      <b:widget-setting name='posts'>7</b:widget-setting>
     </b:widget-settings>
-    <b:includable id='main' var='top'><b:if cond='data:blog.pageType == &quot;index&quot;'><b:include name='noContentPlaceholder'/><div class='blog-grid'><b:loop values='data:posts' var='post'><article class='blog-post-card'><b:if cond='data:post.featuredImage'><img class='blog-featured-image' expr:alt='data:post.title' expr:src='data:post.featuredImage'/><b:else/><img class='blog-featured-image' expr:alt='data:post.title' src='https://github.com/AbdullahWali79/ARCosulting/raw/main/arcosultinglogo.jpeg'/></b:if><div class='blog-post-content'><div class='blog-post-meta'><div class='blog-post-date'><data:post.dateHeader/></div><div class='blog-post-author'><data:post.author/></div></div><h3 class='blog-post-title'><a expr:href='data:post.url' style='color: inherit; text-decoration: none;' target='_self'><data:post.title/></a></h3><div class='blog-post-excerpt'><data:post.snippet/></div><b:if cond='data:post.labels'><div class='blog-post-tags'><b:loop values='data:post.labels' var='label'><span class='blog-tag'><data:label.name/></span></b:loop></div></b:if><a class='blog-read-more' expr:href='data:post.url' target='_self'>Read Full Article</a></div></article></b:loop></div></b:if><b:if cond='data:blog.pageType == &quot;item&quot;'><b:loop values='data:posts' var='post'><b:include data='post' name='post'/></b:loop></b:if></b:includable>
+    <b:includable id='main' var='top'><b:if cond='data:blog.pageType == &quot;index&quot;'><b:include name='noContentPlaceholder'/><div class='blog-grid'><b:loop values='data:posts' var='post'><article class='blog-post-card'><b:if cond='data:post.featuredImage'><img class='blog-featured-image' expr:alt='data:post.title' expr:src='data:post.featuredImage'/><b:else/><img class='blog-featured-image' expr:alt='data:post.title' src='https://github.com/AbdullahWali79/ARCosulting/raw/main/arcosultinglogo.jpeg'/></b:if><div class='blog-post-content'><div class='blog-post-meta'><div class='blog-post-date'><data:post.dateHeader/></div><div class='blog-post-author'><data:post.author/></div></div><h3 class='blog-post-title'><a expr:href='data:post.url' style='color: inherit; text-decoration: none;' target='_self'><data:post.title/></a></h3><div class='blog-post-excerpt'><data:post.snippet/></div><b:if cond='data:post.labels'><div class='blog-post-tags'><b:loop values='data:post.labels' var='label'><span class='blog-tag'><data:label.name/></span></b:loop></div></b:if><a class='blog-read-more' expr:href='data:post.url' target='_self'>Read Full Article</a></div></article></b:loop></div></b:if><b:if cond='data:blog.pageType == &quot;item&quot; or data:view.isPage'><b:loop values='data:posts' var='post'><b:include data='post' name='post'/></b:loop></b:if><b:if cond='data:view.isError'><div class='error-page-wrapper' style='text-align: center; padding: 100px 20px;'><h1 style='font-size: 48px; margin-bottom: 20px;'>404</h1><h2 style='font-size: 24px; margin-bottom: 20px;'>Page Not Found</h2><p style='margin-bottom: 30px;'>The page you are looking for does not exist or has been moved.</p><a class='cta-button secondary' href='/'>Return to Home</a></div></b:if></b:includable>
     <b:includable id='aboutPostAuthor'><div class='author-name'><a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'><span><data:post.author.name/></span></a></div><div><span class='author-desc'><data:post.author.aboutMe/></span></div></b:includable>
     <b:includable id='addComments'><a expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'><b:message name='messages.postAComment'/></a></b:includable>
     <b:includable id='blogThisShare'><b:with value='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' var='onclick'><b:include name='platformShare'/></b:with></b:includable>
@@ -6534,7 +6278,7 @@ no longer available. The includable is retained for backwards-compatibility. -->
     <b:includable id='platformShare'><a expr:class='&quot;goog-inline-block sharing-&quot; + data:platform.key' expr:data-url='data:originalUrl' expr:href='data:shareUrl + &quot;&amp;target=&quot; + data:platform.target' expr:onclick='data:onclick ? data:onclick : &quot;&quot;' expr:title='data:platform.shareMessage' target='_blank'><span class='share-button-link-text'><data:platform.shareMessage/></span></a></b:includable>
     <b:includable id='post' var='post'><b:if cond='data:blog.pageType == &quot;item&quot;'><div class='single-post-navigation'><a class='back-to-blog-nav' href='/'>&#8592;
 Go Back</a></div><article class='single-blog-post'><div class='single-post-header'><b:if cond='data:post.featuredImage'><img class='single-post-image' expr:alt='data:post.title' expr:src='data:post.featuredImage'/><b:else/><img class='single-post-image' expr:alt='data:post.title' src='https://github.com/AbdullahWali79/ARCosulting/raw/main/arcosultinglogo.jpeg'/></b:if><div class='single-post-meta'><div class='single-post-date'><data:post.dateHeader/></div><div class='single-post-author'><data:post.author/></div></div><h1 class='single-post-title'><data:post.title/></h1><b:if cond='data:post.labels'><div class='single-post-tags'><b:loop values='data:post.labels' var='label'><span class='blog-tag'><data:label.name/></span></b:loop></div></b:if></div><div class='single-post-content'><data:post.body/></div><div class='single-post-footer'><a class='back-to-blog' href='/'>&#8592;
-Go Back</a></div></article></b:if></b:includable>
+Go Back</a></div></article></b:if><b:if cond='data:view.isPage'><div class='static-page-wrapper'><data:post.body/></div></b:if></b:includable>
     <b:includable id='postAuthor'><span class='byline post-author vcard'><span class='post-author-label'><data:byline.label/></span><span class='fn'><b:if cond='data:post.author.profileUrl'><meta expr:content='data:post.author.profileUrl'/><a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'><span><data:post.author.name/></span></a><b:else/><span><data:post.author.name/></span></b:if></span></span></b:includable>
     <b:includable id='postBody' var='post'><!-- If metaDescription is empty,
 use the post body as the schema.org description too,
@@ -6699,7 +6443,13 @@ publisher&quot;
   <b:includable id='content'> <div class='widget-content'> <b:class expr:name='data:this.display + &quot;-label-widget-content&quot;'/> <b:include cond='data:this.display == &quot;list&quot;' name='list'/> <b:include cond='data:this.display == &quot;cloud&quot;' name='cloud'/> </div> </b:includable>
   <b:includable id='list'> <ul> <b:loop values='data:labels' var='label'> <li> <a class='label-name' expr:href='data:label.url'> <data:label.name/> <b:if cond='data:this.showFreqNumbers'> <span class='label-count'><data:label.count/></span> </b:if> </a> </li> </b:loop> </ul> </b:includable>
 </b:widget>
-</b:section> <!-- Contact Section --> <section class='consulting-contact' id='contact-us'> <h2>Contact Us</h2> <p>Ready to start your next engineering project? Get in touch with our team of experts for professional consultation and project planning.</p> <div class='contact-cards-container'> <!-- Contact Info Card --> <div class='contact-info-card'> <h3>Get In Touch</h3> <div class='contact-info-item'> <h4>Email Us</h4> <p><a href='mailto:admin@arconsultingengineers.com'>admin@arconsultingengineers.com</a></p> </div> <div class='contact-info-item'> <h4>Contact with WhatsApp</h4> <p><a href='https://wa.me/61481080412' target='_blank'>+61 481 080 412</a></p> </div> <div class='contact-info-item'> <h4>Follow Us</h4> <p> <a href='https://www.facebook.com/ARconsultingengineers/#' target='_blank'>Facebook</a> | <a href='https://www.instagram.com/ar_consulting_engineersanz/' target='_blank'>Instagram</a> </p> </div> </div> <!-- Contact Form Card --> <div class='contact-form-card'> <h3>Drop us a line !</h3> <form class='contact-form' id='contact-form'> <div class='form-group'> <label for='contact-name'>Name</label> <input id='contact-name' name='name' required='required' type='text'/> </div> <div class='form-group'> <label for='contact-email'>Email<span class='required'>*</span></label> <input id='contact-email' name='email' required='required' type='email'/> </div> <div class='form-group'> <label for='contact-message'>Message</label> <textarea id='contact-message' name='message' required='required' rows='5'/> </div> <button class='send-email-btn' type='submit'>Send Email</button> </form> </div> </div> </section> <!-- Footer --> <footer class='consulting-footer'> <p>&#169; 2026 AR Consulting Engineers. All rights reserved.</p> </footer> <!-- Floating Contact Button --> <button class='floating-donation-btn' id='get-quote-btn' type='button'> GET A Quote </button> <!-- Get Quote Modal --> <div class='quote-modal' id='quote-modal'> <div class='quote-modal-overlay'/> <div class='quote-modal-container'> <button class='quote-modal-close' id='quote-modal-close'>&#215; </button> <div class='quote-modal-content'> <h2>Get a Quote</h2> <p>Fill out the form below and we&#39; ll get back to you soon !</p> <form class='quote-form' id='quote-form'> <div class='form-group'> <label for='quote-name'>Name<span class='required'>*</span></label> <input id='quote-name' name='name' required='required' type='text'/> </div> <div class='form-group'> <label for='quote-email'>Email<span class='required'>*</span></label> <input id='quote-email' name='email' required='required' type='email'/> </div> <div class='form-group'> <label for='quote-phone'>Phone Number</label> <input id='quote-phone' name='phone' type='tel'/> </div> <div class='form-group'> <label for='quote-message'>Project Details / Message<span class='required'>*</span></label> <textarea id='quote-message' name='message' required='required' rows='5'/> </div> <button class='send-email-btn' type='submit'>Send Email</button> </form> </div> </div> </div> <!-- Blog Post Link Handler Script -->
+</b:section> <b:if cond='data:view.isHomepage'><!-- Contact Section --> <section class='consulting-contact' id='contact-us'> <h2>Contact Us</h2> <p>Ready to start your next engineering project? Get in touch with our team of experts for professional consultation and project planning.</p> <div class='contact-cards-container'> <!-- Contact Info Card --> <div class='contact-info-card'> <h3>Get In Touch</h3> <div class='contact-info-item'> <h4>Email Us</h4> <p><a href='mailto:admin@arconsultingengineers.com'>admin@arconsultingengineers.com</a></p> </div> <div class='contact-info-item'> <h4>Contact with WhatsApp</h4> <p><a href='https://wa.me/61481080412' target='_blank'>+61 481 080 412</a></p> </div> <div class='contact-info-item'> <h4>Follow Us</h4> <p> <a href='https://www.facebook.com/ARconsultingengineers/#' target='_blank'>Facebook</a> | <a href='https://www.instagram.com/ar_consulting_engineersanz/' target='_blank'>Instagram</a> </p> </div> </div> <!-- Contact Form Card --> <div class='contact-form-card'> <h3>Drop us a line !</h3> <form action='https://formsubmit.co/admin@arconsultingengineers.com' class='contact-form' id='contact-form' method='POST'>
+ <input name='_captcha' type='hidden' value='false'/>
+ <div class='form-group'> <label for='contact-name'>Name</label> <input id='contact-name' name='name' required='required' type='text'/> </div> <div class='form-group'> <label for='contact-email'>Email<span class='required'>*</span></label> <input id='contact-email' name='email' required='required' type='email'/> </div> <div class='form-group'> <label for='contact-message'>Message</label> <textarea id='contact-message' name='message' required='required' rows='5'/> </div> <button class='send-email-btn' type='submit'>Send Email</button> </form> </div> </div> </section> </b:if><!-- Footer --> <footer class='consulting-footer'> <p>&#169; 2026 AR Consulting Engineers. All rights reserved.</p> </footer> <!-- Floating Contact Button --> <button class='floating-donation-btn' id='get-quote-btn' type='button'> GET A Quote </button> <!-- Get Quote Modal --> <div class='quote-modal' id='quote-modal'> <div class='quote-modal-overlay'/> <div class='quote-modal-container'> <button class='quote-modal-close' id='quote-modal-close'>&#215; </button> <div class='quote-modal-content'> <h2>Get a Quote</h2> <p>Fill out the form below and we&#39; ll get back to you soon !</p> <form action='https://formsubmit.co/admin@arconsultingengineers.com' class='quote-form' id='quote-form' method='POST'>
+ <input name='_captcha' type='hidden' value='false'/>
+ <div class='form-group'> <label for='quote-name'>Name<span class='required'>*</span></label> <input id='quote-name' name='name' required='required' type='text'/> </div> <div class='form-group'> <label for='quote-email'>Email<span class='required'>*</span></label> <input id='quote-email' name='email' required='required' type='email'/> </div> <div class='form-group'> <label for='quote-phone'>Phone Number</label> <input id='quote-phone' name='phone' type='tel'/> </div> <div class='form-group'> <label for='quote-message'>Project Details / Message<span class='required'>*</span></label> <textarea id='quote-message' name='message' required='required' rows='5'/> </div> <button class='send-email-btn' type='submit'>Send Email</button> </form> </div> </div> </div> <!-- EmailJS SDK Integration -->
+
+<!-- Blog Post Link Handler Script -->
 <script type='text/javascript'>
 //<![CDATA[
     document.addEventListener('DOMContentLoaded', function() {
@@ -6790,7 +6540,9 @@ publisher&quot;
         let serviceId = null;
 
         for (const serviceKey in servicePageMap) {
-            if (currentPath.includes(serviceKey) || currentUrl.includes(serviceKey)) {
+            // Only trigger if we are on a static page path (/p/) to avoid hijacking blog posts with similar names
+            if ((currentPath.includes('/p/') || currentUrl.includes('/p/')) && 
+                (currentPath.includes(serviceKey) || currentUrl.includes(serviceKey))) {
                 isServicePage = true;
                 serviceId = servicePageMap[serviceKey];
                 break;
@@ -7023,26 +6775,32 @@ publisher&quot;
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                const name = document.getElementById('contact-name').value.trim();
-                const email = document.getElementById('contact-email').value.trim();
-                const message = document.getElementById('contact-message').value.trim();
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
 
-                if (!name || !email || !message) {
-                    alert('Please fill in all required fields.');
-                    return;
-                }
-
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    alert('Please enter a valid email address.');
-                    return;
-                }
-
-                const bodyText = 'Name: ' + name + '\n\nEmail: ' + email + '\n\nMessage:\n' + message;
-                const subject = 'Contact Form Submission from ' + name;
-                openEmailSelector('admin@arconsultingengineers.com', subject, bodyText);
-
-                setTimeout(function() { contactForm.reset(); }, 1000);
+                const formData = new FormData(contactForm);
+                
+                fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        alert('Thanks for Contacting us!');
+                        contactForm.reset();
+                    } else {
+                        alert('Oops! There was a problem submitting your form');
+                    }
+                }).catch(error => {
+                    alert('Oops! There was a problem submitting your form');
+                }).finally(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
             });
         }
     });
@@ -7050,6 +6808,8 @@ publisher&quot;
 </script> <!-- Get Quote Modal Handler Script --> <script type='text/javascript'>
 //<![CDATA[
     document.addEventListener('DOMContentLoaded', function() {
+
+
         const getQuoteBtn = document.getElementById('get-quote-btn');
         const quoteModal = document.getElementById('quote-modal');
         const quoteModalClose = document.getElementById('quote-modal-close');
@@ -7083,100 +6843,129 @@ publisher&quot;
         if (quoteForm) {
             quoteForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                const name = document.getElementById('quote-name').value.trim();
-                const email = document.getElementById('quote-email').value.trim();
-                const phone = document.getElementById('quote-phone').value.trim();
-                const message = document.getElementById('quote-message').value.trim();
+                const submitBtn = quoteForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
 
-                if (!name || !email || !message) {
-                    alert('Please fill in all required fields.');
-                    return;
-                }
-
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    alert('Please enter a valid email address.');
-                    return;
-                }
-
-                let bodyText = 'Name: ' + name + '\n\nEmail: ' + email;
-                if (phone) bodyText += '\n\nPhone: ' + phone;
-                bodyText += '\n\nProject Details / Message:\n' + message;
-
-                const subjectDecoded = 'Quote Request from ' + name;
-                openEmailSelector('admin@arconsultingengineers.com', subjectDecoded, bodyText);
-
-                setTimeout(function() { closeModal(); quoteForm.reset(); }, 1000);
+                const formData = new FormData(quoteForm);
+                
+                fetch(quoteForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        alert('Thanks for Contacting us!');
+                        quoteForm.reset();
+                        closeModal();
+                    } else {
+                        alert('Oops! There was a problem submitting your quote request');
+                    }
+                }).catch(error => {
+                    alert('Oops! There was a problem submitting your quote request');
+                }).finally(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
             });
         }
     });
 //]]>
 </script>
-<!-- Email Selection Logic -->
+<!-- Careers Form Ajax Handler -->
 <script type='text/javascript'>
 //<![CDATA[
-function openEmailSelector(to, subject, body) {
-        const selectorModal=document.getElementById('email-selector-modal');
-        const gmailBtn=document.getElementById('send-gmail');
-        const outlookBtn=document.getElementById('send-outlook');
-        const yahooBtn=document.getElementById('send-yahoo');
-        const defaultBtn=document.getElementById('send-default');
-        const closeBtn=document.getElementById('selector-close');
-        const overlay=document.getElementById('email-selector-overlay');
-
-        if (!selectorModal) return;
-
-        // Construct links
-        const subjectEnc=encodeURIComponent(subject);
-        const bodyEnc=encodeURIComponent(body);
-
-        gmailBtn.href='https://mail.google.com/mail/?view=cm&fs=1&to=' + to + '&su=' + subjectEnc + '&body=' + bodyEnc;
-        outlookBtn.href='https://outlook.live.com/mail/0/deeplink/compose?to=' + to + '&subject=' + subjectEnc + '&body=' + bodyEnc;
-        yahooBtn.href='https://compose.mail.yahoo.com/?to=' + to + '&subj=' + subjectEnc + '&body=' + bodyEnc;
-        defaultBtn.href='mailto:' + to + '?subject=' + subjectEnc + '&body=' + bodyEnc;
-
-        // Show modal
-        selectorModal.classList.add('active');
-
-        // Close logic
-        const closeModal=() => selectorModal.classList.remove('active');
-        closeBtn.onclick=closeModal;
-        overlay.onclick=closeModal;
-
-        // Close on option click
-        [gmailBtn, outlookBtn, yahooBtn, defaultBtn].forEach(btn => {
-                btn.onclick=() => {
-                    setTimeout(closeModal, 500);
-                };
+    document.addEventListener('DOMContentLoaded', function() {
+        var fileWrappers = document.querySelectorAll('.file-upload-wrapper');
+        var applyForm = document.querySelector('.apply-form');
+        var submitBtn = document.getElementById('submitFormBtn');
+        
+        if (fileWrappers.length > 0) {
+            fileWrappers.forEach(function(wrapper) {
+                var fileInput = wrapper.querySelector('input[type="file"]');
+                var fileLabel = wrapper.querySelector('p');
+                if (fileInput && fileLabel) {
+                    var originalText = fileLabel.textContent;
+                    
+                    fileInput.addEventListener('change', function(e) {
+                        if (this.files && this.files.length) {
+                            var fileMb = this.files[0].size / 1024 / 1024;
+                            if (fileMb != Math.min(fileMb, 10)) {
+                                alert('Error: File size must be 10MB or less. Your file is ' + fileMb.toFixed(1) + 'MB.');
+                                this.value = ''; 
+                                fileLabel.textContent = originalText;
+                                fileLabel.style.color = '#666';
+                                fileLabel.style.fontWeight = 'normal';
+                                return;
+                            }
+                            fileLabel.textContent = 'Selected: ' + this.files[0].name;
+                            fileLabel.style.color = '#000';
+                            fileLabel.style.fontWeight = 'bold';
+                        } else {
+                            fileLabel.textContent = originalText;
+                            fileLabel.style.color = '#666';
+                            fileLabel.style.fontWeight = 'normal';
+                        }
+                    });
+                }
             });
-    }
+        }
+
+        if (applyForm) {
+            if (submitBtn) {
+                var hiddenIframe = document.createElement('iframe');
+                hiddenIframe.name = 'hiddenConfirmIframe';
+                hiddenIframe.id = 'hiddenConfirmIframe';
+                hiddenIframe.style.display = 'none';
+                document.body.appendChild(hiddenIframe);
+
+                applyForm.target = 'hiddenConfirmIframe';
+                var isSubmitting = false;
+
+                hiddenIframe.onload = function() {
+                    if (isSubmitting) {
+                        isSubmitting = false;
+                        alert('Success! Your application has been sent.');
+                        submitBtn.textContent = 'Send Application';
+                        submitBtn.style.opacity = '1';
+                        submitBtn.disabled = false;
+                        applyForm.reset();
+                        
+                        fileWrappers.forEach(function(wrapper) {
+                            var fileLabel = wrapper.querySelector('p');
+                            var fileInput = wrapper.querySelector('input[type="file"]');
+                            if (fileLabel && fileInput) {
+                                // Provide appropriate reset text dynamically based on the input name
+                                if (fileInput.name.includes("cover")) {
+                                    fileLabel.textContent = 'Click here or drag to upload Cover Letter';
+                                } else {
+                                    fileLabel.textContent = 'Click here or drag to upload CV';
+                                }
+                                fileLabel.style.color = '#666';
+                                fileLabel.style.fontWeight = 'normal';
+                            }
+                        });
+                        window.location.href = '/'; 
+                    }
+                };
+
+                applyForm.addEventListener('submit', function(e) {
+                    var originalBtnText = submitBtn.textContent;
+                    submitBtn.textContent = 'Uploading... Please wait';
+                    isSubmitting = true;
+                    
+                    setTimeout(function() {
+                        submitBtn.disabled = true;
+                        submitBtn.style.opacity = '0.7';
+                    }, 50);
+                });
+            }
+        }
+    });
 //]]>
 </script>
-<!-- Email Selector Modal -->
-<div class='email-selector-modal' id='email-selector-modal'>
-    <div class='email-selector-overlay' id='email-selector-overlay'/>
-    <div class='email-selector-container'>
-        <h3>Choose Email Service</h3>
-        <p>How would you like to send your message?</p>
-        <div class='provider-list'>
-            <a class='provider-option provider-gmail' href='#' id='send-gmail'>
-                <div class='provider-icon'>M</div>
-                <span>Gmail (Web)</span>
-            </a>
-            <a class='provider-option provider-outlook' href='#' id='send-outlook'>
-                <div class='provider-icon'>O</div>
-                <span>Outlook / Hotmail</span>
-            </a>
-            <a class='provider-option provider-yahoo' href='#' id='send-yahoo'>
-                <div class='provider-icon'>Y</div>
-                <span>Yahoo Mail</span>
-            </a>
-            <a class='provider-option provider-default' href='#' id='send-default'>
-                <div class='provider-icon'>E</div>
-                <span>Default Email App</span>
-            </a>
-        </div>
-        <button class='selector-close' id='selector-close'>Cancel</button>
-    </div>
-</div>
+<!-- Removed Email Selector Modal HTML -->
 </div> </body> </html>

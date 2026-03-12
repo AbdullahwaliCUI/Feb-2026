@@ -1,0 +1,1196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='adam-azam-blogger.xml' b:templateVersion='1.3.3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <title><data:view.title.escaped/></title>
+  <b:include data='blog' name='all-head-content'/>
+
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com' rel='preconnect'/>
+  <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap' rel='stylesheet'/>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link crossorigin='anonymous' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' rel='stylesheet'/>
+  <!-- FontAwesome -->
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
+  <!-- Animate.css for entrance animations -->
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css' rel='stylesheet'/>
+  
+  <b:skin version='1.3.3'><![CDATA[
+    /* Custom High-End CSS Variables and Styles */
+    :root {
+      /* Gradient & Accent palette */
+      --primary-dark: #0f2027;
+      --primary-mid: #203a43;
+      --primary-light: #2c5364;
+      
+      --accent-gold: #c5a059;
+      --accent-gold-dark: #b08d4b;
+      --accent-gold-light: #dfb96f;
+      
+      /* Neutrals */
+      --text-dark: #1a1a1a;
+      --text-muted: #5a6673;
+      --bg-light: #f4f6f9;
+      --bg-white: #ffffff;
+      
+      /* Glassmorphism settings */
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --glass-border: rgba(255, 255, 255, 0.4);
+      --glass-shadow: 0 8px 32px 0 rgba(15, 32, 39, 0.08);
+      
+      /* Radii */
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-pill: 50px;
+    }
+    
+    /* Global Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5, h6, .brand-font {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* CSS Animations for Gradients */
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Floating Data Nodes Animation */
+    .nodes-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .node {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Node lines connecting them */
+    .node::before {
+        content: '';
+        position: absolute;
+        width: 150px;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent);
+        top: 50%;
+        left: 50%;
+        transform-origin: 0 0;
+    }
+
+    .node:nth-child(1) { width: 8px; height: 8px; top: 20%; left: 10%; animation: float 12s infinite alternate ease-in-out; }
+    .node:nth-child(1)::before { transform: rotate(45deg); width: 100px; }
+    
+    .node:nth-child(2) { width: 12px; height: 12px; top: 60%; left: 15%; animation: float 15s infinite alternate-reverse ease-in-out; }
+    .node:nth-child(2)::before { transform: rotate(-25deg); width: 200px; }
+    
+    .node:nth-child(3) { width: 6px; height: 6px; top: 30%; left: 45%; animation: float 10s infinite alternate ease-in-out; }
+    .node:nth-child(3)::before { transform: rotate(15deg); width: 150px; }
+    
+    .node:nth-child(4) { width: 10px; height: 10px; top: 70%; left: 60%; animation: float 18s infinite alternate-reverse ease-in-out; }
+    .node:nth-child(4)::before { transform: rotate(-65deg); width: 180px; }
+    
+    .node:nth-child(5) { width: 15px; height: 15px; top: 40%; left: 80%; animation: float 14s infinite alternate ease-in-out; }
+    .node:nth-child(5)::before { transform: rotate(120deg); width: 220px; }
+    
+    .node:nth-child(6) { width: 9px; height: 9px; top: 80%; left: 85%; animation: float 16s infinite alternate-reverse ease-in-out; }
+    .node:nth-child(6)::before { transform: rotate(180deg); width: 120px; }
+    
+    .node:nth-child(7) { width: 5px; height: 5px; top: 10%; left: 60%; animation: float 11s infinite alternate ease-in-out; }
+    .node:nth-child(7)::before { transform: rotate(90deg); width: 160px; }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+      50% { opacity: 0.8; }
+      100% { transform: translate(40px, -40px) scale(1.5); opacity: 0.3; }
+    }
+    
+    /* Navbar (Glassmorphism) */
+    .navbar-custom {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      padding: 18px 0;
+      transition: all 0.3s ease;
+    }
+    .navbar-custom .navbar-brand {
+      font-weight: 700;
+      font-size: 1.6rem;
+      /* Animated gradient text for brand */
+      background: linear-gradient(90deg, var(--primary-dark), var(--primary-light), var(--primary-dark));
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: gradientBG 4s linear infinite;
+      letter-spacing: -0.5px;
+      position: relative;
+    }
+    .navbar-custom .navbar-brand i {
+      color: var(--accent-gold);
+      -webkit-background-clip: initial;
+      background-clip: initial;
+      color: var(--accent-gold);
+    }
+    .navbar-custom .nav-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text-dark) !important;
+      padding: 0.5rem 1.2rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .navbar-custom .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0px;
+      left: 50%;
+      background-color: var(--accent-gold);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .navbar-custom .nav-link:hover {
+      color: var(--accent-gold) !important;
+    }
+    .navbar-custom .nav-link:hover::after {
+      width: 70%;
+    }
+    
+    /* Premium Animated Button (CTA) */
+    .btn-premium {
+      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 50%, var(--accent-gold) 100%);
+      background-size: 200% auto;
+      color: white !important;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      border-radius: var(--radius-pill);
+      padding: 10px 24px;
+      border: none;
+      box-shadow: 0 8px 20px rgba(197, 160, 89, 0.4);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-premium:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(197, 160, 89, 0.5);
+      background-position: right center; /* animate gradient on hover */
+    }
+    
+    .btn-outline-premium {
+      background: transparent;
+      color: white !important;
+      border: 2px solid rgba(255,255,255,0.8);
+      font-weight: 600;
+      border-radius: var(--radius-pill);
+      padding: 10px 24px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+    .btn-outline-premium:hover {
+      background: white;
+      color: var(--primary-dark) !important;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Hero Section with Animated Gradient Background */
+    .hero-section {
+      /* Setup the animated shifting gradient */
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1f4037, #283c86);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+      padding: 140px 0 160px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    /* Angled bottom clip-path */
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 80px;
+      background: var(--bg-light);
+      clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 80%);
+      z-index: 1;
+    }
+    
+    .hero-content-wrapper {
+        position: relative;
+        z-index: 2; /* Needs to be above the animated nodes */
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(197, 160, 89, 0.15);
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      color: var(--accent-gold-light);
+      border-radius: var(--radius-pill);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4); }
+        70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(197, 160, 89, 0); }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+    }
+
+    .hero-title {
+      font-weight: 700;
+      font-size: 4.5rem;
+      line-height: 1.1;
+      margin-bottom: 25px;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      letter-spacing: -1px;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    
+    /* Services Section (Elevated Cards with Entrance animations) */
+    .services-section {
+      padding: 100px 0;
+      background-color: var(--bg-light);
+      position: relative;
+    }
+    .section-title {
+      font-weight: 700;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 70px;
+      color: var(--primary-dark);
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background: var(--accent-gold);
+      border-radius: 2px;
+    }
+    .service-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      padding: 50px 40px;
+      height: 100%;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 10px 40px -10px rgba(15, 32, 39, 0.08);
+      border: 1px solid rgba(0,0,0,0.03);
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    /* Subtle background pulse on hover */
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: radial-gradient(circle at top right, rgba(197, 160, 89, 0.05), transparent 40%);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        z-index: -2;
+    }
+    .service-card::after {
+      content: "";
+      border-radius: var(--radius-md);
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      box-shadow: 0 20px 40px -10px rgba(15, 32, 39, 0.15);
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      z-index: -1;
+    }
+    .service-card:hover {
+      transform: translateY(-15px);
+      border-color: rgba(197, 160, 89, 0.2);
+    }
+    .service-card:hover::after, .service-card:hover::before {
+      opacity: 1;
+    }
+    .icon-wrapper {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.1) 0%, rgba(197, 160, 89, 0.05) 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      transition: transform 0.4s ease, background 0.4s ease;
+    }
+    .service-card:hover .icon-wrapper {
+      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
+      transform: scale(1.1) rotate(5deg);
+    }
+    .service-icon {
+      font-size: 2rem;
+      color: var(--accent-gold);
+      transition: color 0.4s ease;
+    }
+    .service-card:hover .service-icon {
+      color: white;
+    }
+    .service-title {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: var(--primary-dark);
+      letter-spacing: -0.2px;
+    }
+    .service-card p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+    
+    /* Blog Section */
+    .blog-section {
+      padding: 100px 0;
+      background-color: var(--bg-white);
+    }
+    
+    /* Post Cards */
+    .post-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 40px -10px rgba(15, 32, 39, 0.05);
+      border: 1px solid rgba(0,0,0,0.03);
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px -10px rgba(15, 32, 39, 0.12);
+    }
+    .post-img-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+    .post-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .post-card:hover .post-img {
+      transform: scale(1.05);
+    }
+    .post-category {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: rgba(15, 32, 39, 0.8);
+      backdrop-filter: blur(4px);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .post-content {
+      padding: 30px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    .post-meta i {
+      color: var(--accent-gold);
+      margin-right: 6px;
+    }
+    .post-title {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 15px;
+    }
+    .post-title a {
+      color: var(--primary-dark);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.5rem;
+      line-height: 1.3;
+      transition: color 0.3s ease;
+    }
+    .post-title a:hover {
+      color: var(--accent-gold);
+    }
+    .post-snippet {
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .read-more {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--primary-mid);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    .read-more i {
+      margin-left: 8px;
+      font-size: 0.8rem;
+      transition: transform 0.3s ease;
+    }
+    .read-more:hover {
+      color: var(--accent-gold);
+    }
+    .read-more:hover i {
+      transform: translateX(5px);
+    }
+
+    /* Single Post */
+    .single-post-wrapper {
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 50px -10px rgba(15, 32, 39, 0.08);
+      padding: 50px;
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+    .single-post h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 3rem;
+      color: var(--primary-dark);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .single-post-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .post-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #333;
+    }
+    .post-body h2, .post-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-dark);
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    .post-body blockquote {
+      border-left: 4px solid var(--accent-gold);
+      padding-left: 20px;
+      margin: 30px 0;
+      font-style: italic;
+      color: var(--primary-mid);
+      font-size: 1.2rem;
+    }
+    
+    /* Pagination */
+    .blog-pager {
+      margin-top: 50px;
+    }
+    .blog-pager a {
+      background: white;
+      border: 1px solid #eaeaea;
+      color: var(--primary-dark);
+      padding: 12px 25px;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .blog-pager a:hover {
+      background: var(--primary-dark);
+      color: white;
+      border-color: var(--primary-dark);
+    }
+
+    /* Contact Section Customization */
+    .contact-section {
+        padding: 100px 0;
+        background-color: var(--bg-light);
+    }
+    .contact-form-wrapper {
+        background: var(--bg-white);
+        border-radius: var(--radius-lg);
+        box-shadow: 0 10px 40px -10px rgba(15, 32, 39, 0.08);
+        padding: 50px;
+        border: 1px solid rgba(0,0,0,0.03);
+    }
+    .contact-form-wrapper .form-control {
+        border-radius: var(--radius-md);
+        padding: 15px 20px;
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        font-family: 'Inter', sans-serif;
+        color: var(--text-dark);
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+    }
+    .contact-form-wrapper .form-control:focus {
+        border-color: var(--accent-gold);
+        box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+        background-color: white;
+        outline: none;
+    }
+    .contact-form-wrapper textarea.form-control {
+        min-height: 150px;
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: var(--primary-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 80px 0 30px;
+      position: relative;
+    }
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      /* Animated gradient band at the top of the footer */
+      background: linear-gradient(90deg, #c5a059, #dfb96f, #0f2027, #dfb96f);
+      background-size: 200% 200%;
+      animation: gradientBG 4s ease infinite;
+    }
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 25px;
+      display: inline-block;
+    }
+    .footer-brand i { 
+      color: var(--accent-gold);
+    }
+    .footer-heading {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: white;
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .footer-links a:hover {
+      color: var(--accent-gold);
+      padding-left: 5px;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      color: white;
+      font-size: 1.1rem;
+      margin-right: 15px;
+      transition: all 0.3s ease;
+    }
+    .social-links a:hover {
+      background: var(--accent-gold);
+      transform: translateY(-3px) rotate(10deg);
+    }
+    .copyright {
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+      .hero-title { font-size: 3.2rem; }
+      .section-title { font-size: 2.2rem; }
+      .navbar-custom { padding: 10px 0; }
+      .navbar-collapse {
+        background: var(--bg-white);
+        padding: 20px;
+        border-radius: var(--radius-md);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        margin-top: 15px;
+        position: absolute;
+        width: calc(100% - 24px);
+        left: 12px;
+        top: 100%;
+        z-index: 1050;
+      }
+      .navbar-nav {
+        align-items: flex-start !important;
+      }
+      .navbar-nav .nav-item {
+        width: 100%;
+        margin: 5px 0 !important;
+      }
+      .navbar-nav .nav-link {
+        padding: 12px 15px !important;
+        display: block;
+        width: 100%;
+        border-radius: var(--radius-sm);
+      }
+      .navbar-nav .nav-link:hover {
+        background-color: var(--bg-light);
+      }
+      .navbar-custom .nav-link::after {
+        display: none;
+      }
+      .navbar-nav .btn-premium {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+        display: block;
+      }
+    }
+    @media (max-width: 576px) {
+      .hero-title { font-size: 2.5rem; }
+      .hero-section { padding: 100px 0 120px; }
+      .section-title { font-size: 1.8rem; }
+      .single-post-wrapper { padding: 30px 20px; }
+      .single-post h1 { font-size: 2rem; }
+      .contact-form-wrapper { padding: 30px 20px; }
+    }
+  ]]></b:skin>
+</head>
+<body>
+
+  <!-- Premium Glass Navbar -->
+  <nav class='navbar navbar-expand-lg navbar-light navbar-custom sticky-top'>
+    <div class='container position-relative'>
+      <a class='navbar-brand' href='/'><i class='fas fa-microscope me-2'></i>ResearchConsult</a>
+      <button aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler border-0 shadow-none' data-bs-target='#navbarNav' data-bs-toggle='collapse' type='button'>
+        <span class='navbar-toggler-icon'></span>
+      </button>
+      <div class='collapse navbar-collapse' id='navbarNav'>
+        <ul class='navbar-nav ms-auto align-items-center'>
+          <li class='nav-item mx-2'>
+            <a class='nav-link' href='#home'>Home</a>
+          </li>
+          <li class='nav-item mx-2'>
+            <a class='nav-link' href='#services'>Expertise</a>
+          </li>
+          <li class='nav-item mx-2'>
+            <a class='nav-link' href='#blog'>Insights</a>
+          </li>
+          <li class='nav-item ms-lg-4 mt-3 mt-lg-0'>
+            <a class='btn btn-premium' href='#contact'>Get Guidance</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <b:section id='header-section' maxwidgets='1' showaddelement='no'>
+    <b:widget id='Header1' locked='true' title='Research Consultancy' type='Header' version='2'>
+       <b:includable id='main'></b:includable>
+       <b:includable id='description'></b:includable>
+       <b:includable id='title'></b:includable>
+    </b:widget>
+  </b:section>
+
+  <!-- High-End Hero Section with Animated Gradient and Floating Nodes -->
+  <section class='hero-section' id='home'>
+    <!-- Moving Research Animation Area -->
+    <div class='nodes-container'>
+      <div class='node'></div>
+      <div class='node'></div>
+      <div class='node'></div>
+      <div class='node'></div>
+      <div class='node'></div>
+      <div class='node'></div>
+      <div class='node'></div>
+    </div>
+
+    <div class='container hero-content-wrapper'>
+      <div class='row justify-content-center'>
+        <div class='col-lg-9'>
+          <div class='hero-badge animate__animated animate__fadeInDown'><i class='fas fa-star me-2'></i>Premium Academic Assistance</div>
+          <h1 class='hero-title animate__animated animate__fadeInUp animate__delay-1s'>Elevate Your Research <br/><span>To Publication</span></h1>
+          <p class='hero-subtitle animate__animated animate__fadeInUp animate__delay-2s'>Research consultancy traning to paper publish classes and compleet Guide with our expert researchers. each and everyting hum proideakry gy ,, machine learning and in appliend fileds. data set with complete work flow guidence.</p>
+          <div class='mt-5 d-flex flex-column flex-sm-row justify-content-center gap-3 animate__animated animate__fadeInUp animate__delay-3s'>
+            <a class='btn btn-premium btn-lg px-5 py-3' href='#services'>Explore Expertise</a>
+            <a class='btn btn-outline-premium btn-lg px-5 py-3' href='#contact'>Contact Experts</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Elevated Services Section -->
+  <section class='services-section' id='services'>
+    <div class='container'>
+      <h2 class='section-title wow animate__animated animate__fadeInUp'>Our Core Competencies</h2>
+      <div class='row g-4 mt-4'>
+        <!-- Service 1 -->
+        <div class='col-md-4 wow animate__animated animate__fadeInUp' style='animation-delay: 0.1s;'>
+          <div class='service-card'>
+            <div class='icon-wrapper'>
+              <i class='fas fa-graduation-cap service-icon'></i>
+            </div>
+            <h3 class='service-title'>Training to Paper Publish</h3>
+            <p>Complete classes and guidance from basic training all the way to successfully publishing your research paper. Every step is intricately covered by our senior academic experts.</p>
+          </div>
+        </div>
+        <!-- Service 2 -->
+        <div class='col-md-4 wow animate__animated animate__fadeInUp' style='animation-delay: 0.3s;'>
+          <div class='service-card'>
+            <div class='icon-wrapper'>
+              <i class='fas fa-network-wired service-icon'></i>
+            </div>
+            <h3 class='service-title'>Machine Learning &amp; Applied Fields</h3>
+            <p>Specialized expertise in Machine Learning algorithms, deep learning operations, and their practical implementation across various applied academic research fields.</p>
+          </div>
+        </div>
+        <!-- Service 3 -->
+        <div class='col-md-4 wow animate__animated animate__fadeInUp' style='animation-delay: 0.5s;'>
+          <div class='service-card'>
+            <div class='icon-wrapper'>
+              <i class='fas fa-database service-icon'></i>
+            </div>
+            <h3 class='service-title'>Datasets &amp; Workflow Strategy</h3>
+            <p>We provide highly relevant datasets along with complete workflow architectural guidance to ensure your research methodology is robust, verifiable, and highly impactful.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog / Published Works Section -->
+  <section class='blog-section' id='blog'>
+    <div class='container'>
+      <h2 class='section-title wow animate__animated animate__fadeInUp'>Latest Research Insights</h2>
+      
+      <!-- Blogger Main Widget Area -->
+      <b:section class='main-posts wow animate__animated animate__fadeInUp' id='main' maxwidgets='1' showaddelement='no' style='animation-delay: 0.4s;'>
+        <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2'>
+          <b:includable id='main'>
+            <b:if cond='data:view.isMultipleItems'>
+              <!-- Index / Grid View -->
+              <div class='row g-4'>
+                <b:loop values='data:posts' var='post'>
+                  <div class='col-lg-4 col-md-6 d-flex align-items-stretch'>
+                    <article class='post-card w-100'>
+                      <div class='post-img-wrapper'>
+                        <!-- Post Category Pill overlay -->
+                        <span class='post-category'><b:if cond='data:post.labels'><b:eval expr='data:post.labels.first.name'/><b:else/>Research</b:if></span>
+                        
+                        <b:if cond='data:post.featuredImage'>
+                          <img class='post-img' expr:alt='data:post.title' expr:src='data:post.featuredImage'/>
+                        <b:else/>
+                          <div class='post-img d-flex align-items-center justify-content-center bg-light' style='background: linear-gradient(135deg, #f4f6f9, #e9ecef);'>
+                             <i class='fas fa-file-alt fa-3x text-secondary opacity-50'></i>
+                          </div>
+                        </b:if>
+                      </div>
+                      
+                      <div class='post-content'>
+                        <div class='post-meta'>
+                          <i class='far fa-calendar-alt'></i> <span><b:eval expr='data:post.date format &quot;MMMM dd, yyyy&quot;'/></span>
+                        </div>
+                        <h3 class='post-title'>
+                          <a expr:href='data:post.url'><data:post.title/></a>
+                        </h3>
+                        <p class='post-snippet'>
+                          <data:post.snippets.short/>...
+                        </p>
+                        <div class='mt-auto pt-3'>
+                            <a class='read-more' expr:href='data:post.url'>Read Insight <i class='fas fa-arrow-right'></i></a>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </b:loop>
+              </div>
+              
+              <!-- Pagination -->
+              <b:include name='nextprev'/>
+              
+            <b:else/>
+              <!-- Single Post View -->
+              <div class='row justify-content-center'>
+                <div class='col-lg-9'>
+                  <div class='single-post-wrapper text-start'>
+                    <b:loop values='data:posts' var='post'>
+                      <article class='single-post'>
+                        <h1><data:post.title/></h1>
+                        <div class='single-post-meta'>
+                          <span class='me-4'><i class='far fa-calendar-alt me-2 text-warning'></i> <b:eval expr='data:post.date format &quot;MMMM dd, yyyy&quot;'/></span>
+                          <span><i class='far fa-user-circle me-2 text-warning'></i> By <data:post.author.name/></span>
+                        </div>
+                        
+                        <div class='post-body'>
+                          <data:post.body/>
+                        </div>
+                        
+                        <b:if cond='data:post.labels'>
+                          <div class='mt-5 pt-4 border-top border-light'>
+                            <span class='fw-bold text-dark me-2 font-monospace text-uppercase small'>Topics:</span> 
+                            <b:loop values='data:post.labels' var='label'>
+                              <a class='badge bg-light text-dark text-decoration-none border me-1 py-1 px-2 fw-normal' expr:href='data:label.url'><data:label.name/></a>
+                            </b:loop>
+                          </div>
+                        </b:if>
+                      </article>
+                      
+                      <!-- Comments Section -->
+                      <b:if cond='data:post.allowComments'>
+                         <div class='mt-5'>
+                           <b:include data='post' name='comments'/>
+                         </div>
+                      </b:if>
+                    </b:loop>
+                  </div>
+                </div>
+              </div>
+            </b:if>
+          </b:includable>
+          
+          <b:includable id='nextprev'>
+            <div class='blog-pager d-flex justify-content-between align-items-center'>
+              <b:if cond='data:newerPageUrl'>
+                <a expr:href='data:newerPageUrl' expr:title='data:messages.newerPosts'>
+                  <i class='fas fa-chevron-left me-2'></i> Newer Articles
+                </a>
+              <b:else/>
+                <div></div>
+              </b:if>
+              
+              <b:if cond='data:olderPageUrl'>
+                <a expr:href='data:olderPageUrl' expr:title='data:messages.olderPosts'>
+                  Older Articles <i class='fas fa-chevron-right ms-2'></i>
+                </a>
+              <b:else/>
+                <div></div>
+              </b:if>
+            </div>
+          </b:includable>
+
+          <b:includable id='commentDeleteIcon'></b:includable>
+          <b:includable id='commentForm'></b:includable>
+          <b:includable id='commentFormIframeSrc'></b:includable>
+          <b:includable id='commentItem'></b:includable>
+          <b:includable id='commentList'></b:includable>
+          <b:includable id='commentPicker'></b:includable>
+          <b:includable id='comments'></b:includable>
+          <b:includable id='commentsTitle'></b:includable>
+          <b:includable id='feedLinks'></b:includable>
+          <b:includable id='feedLinksBody'></b:includable>
+          <b:includable id='iframeComments'></b:includable>
+          <b:includable id='inlineAd'></b:includable>
+          <b:includable id='post'></b:includable>
+          <b:includable id='postQuickEdit'></b:includable>
+          <b:includable id='shareButtons'></b:includable>
+          <b:includable id='status-message'></b:includable>
+          <b:includable id='threadedCommentForm'></b:includable>
+          <b:includable id='threadedCommentJs'></b:includable>
+          <b:includable id='threadedComments'></b:includable>
+        </b:widget>
+      </b:section>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class='contact-section' id='contact'>
+      <div class='container'>
+          <div class='row justify-content-center'>
+              <div class='col-lg-8'>
+                  <div class='contact-form-wrapper wow animate__animated animate__fadeInUp'>
+                      <div class='text-center mb-5'>
+                          <h2 class='section-title mb-3'>Get in Touch</h2>
+                          <p class='text-muted'>Send us a message and our expert researchers will respond as soon as possible.</p>
+                      </div>
+                      
+                      <!-- FormSubmit contact form -->
+                      <form action='https://formsubmit.co/abdullahwale@gmail.com' id='contactForm' method='POST'>
+                          <!-- Disable Captcha for smoother experience -->
+                          <input name='_captcha' type='hidden' value='false'/>
+                          <!-- Prevent Redirect because we use AJAX -->
+                          <input name='_next' type='hidden' value='false'/>
+                          <input name='_subject' type='hidden' value='New Request from Research Consult'/>
+                          <input name='_template' type='hidden' value='table'/>
+                          
+                          <div class='row'>
+                              <div class='col-md-6 mb-3'>
+                                  <input class='form-control' name='name' placeholder='Your Full Name' required='required' type='text'/>
+                              </div>
+                              <div class='col-md-6 mb-3'>
+                                  <input class='form-control' name='email' placeholder='Your Email Address' required='required' type='email'/>
+                              </div>
+                          </div>
+                          
+                          <div class='mb-3'>
+                              <input class='form-control' name='subject' placeholder='Research Topic / Subject' required='required' type='text'/>
+                          </div>
+                          
+                          <div class='mb-4'>
+                              <textarea class='form-control' name='message' placeholder='Tell us about your research goals or datasets required...' required='required'></textarea>
+                          </div>
+                          
+                          <div class='text-center'>
+                              <button class='btn btn-premium btn-lg w-100 py-3 d-flex justify-content-center align-items-center' type='submit'>
+                                  <span>Send Message</span> <i class='fas fa-paper-plane ms-2'></i>
+                              </button>
+                          </div>
+                          
+                          <!-- AJAX Form Response Message Container -->
+                          <div class='mt-4 text-center' id='formMessage'></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Premium Footer -->
+  <footer class='footer'>
+    <div class='container'>
+      <div class='row g-4'>
+        <div class='col-lg-5 pe-lg-5'>
+          <a class='footer-brand text-decoration-none' href='/'><i class='fas fa-microscope me-2'></i>ResearchConsult</a>
+          <p class='mt-3 lh-lg'>Your elite partner from raw data to published paper. We guide you through complex machine learning implementations, methodology structure, and definitive publishing workflows.</p>
+          <div class='social-links mt-4'>
+            <a href='#'><i class='fab fa-twitter'></i></a>
+            <a href='#'><i class='fab fa-linkedin-in'></i></a>
+            <a href='#'><i class='fab fa-facebook-f'></i></a>
+            <a href='#'><i class='fas fa-envelope'></i></a>
+          </div>
+        </div>
+        
+        <div class='col-lg-3 col-md-6 mt-5 mt-lg-0'>
+          <h4 class='footer-heading'>Navigation</h4>
+          <ul class='list-unstyled footer-links'>
+            <li><a href='#home'>Home</a></li>
+            <li><a href='#services'>Core Competencies</a></li>
+            <li><a href='#blog'>Research Insights</a></li>
+            <li><a href='#contact'>Get in Touch</a></li>
+          </ul>
+        </div>
+        
+        <div class='col-lg-4 col-md-6 mt-5 mt-lg-0'>
+          <h4 class='footer-heading'>Contact Experts</h4>
+          <p class='mb-4'>Ready to elevate your academic research? Get in touch with our lead consultants today.</p>
+          <p><i class='fas fa-envelope me-2 text-warning'></i> abdullahwale@gmail.com</p>
+          <p><i class='fas fa-map-marker-alt me-2 text-warning'></i> Global Academic Node</p>
+        </div>
+      </div>
+      
+      <div class='copyright'>
+        <p class='mb-0'>&#169; 2026 Research Consultancy. Elevating Academic Excellence. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script crossorigin='anonymous' integrity='sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'></script>
+  
+  <script>
+    //<![CDATA[
+    // Smooth scrolling for anchor links with offset for sticky navbar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            // Close mobile menu if open
+            const collapseElement = document.getElementById('navbarNav');
+            if (collapseElement && collapseElement.classList.contains('show')) {
+                document.querySelector('.navbar-toggler').click();
+            }
+
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+              const headerOffset = 80;
+              const elementPosition = targetElement.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
+              window.scrollTo({
+                   top: offsetPosition,
+                   behavior: "smooth"
+              });
+            }
+        });
+    });
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar-custom');
+        if (window.scrollY > 50) {
+            navbar.style.padding = '10px 0';
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        } else {
+            navbar.style.padding = '18px 0';
+            navbar.style.background = 'rgba(255, 255, 255, 0.85)';
+        }
+    });
+
+    // Simple scroll trigger for animations (so they trigger when scrolled into view)
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.visibility = 'visible';
+                entry.target.classList.add('animate__animated');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Initial setup: hide wow elements
+    document.addEventListener('DOMContentLoaded', () => {
+        const animatedElements = document.querySelectorAll('.wow');
+        animatedElements.forEach(el => {
+            el.style.visibility = 'hidden';
+            // We temporarily remove the class so the observer re-adds it to trigger the animation
+            el.classList.remove('animate__animated'); 
+            observer.observe(el);
+        });
+    });
+    
+    // FormSubmit AJAX Handler (Prevents Default Redirection FormSubmit Screen)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent standard redirect
+        
+        const form = e.target;
+        const formMessage = document.getElementById('formMessage');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const btnText = submitBtn.querySelector('span');
+        const btnIcon = submitBtn.querySelector('i');
+        
+        // Save original text and update to loading state
+        const originalText = btnText.innerText;
+        btnText.innerText = 'Sending...';
+        btnIcon.className = 'fas fa-spinner fa-spin ms-2';
+        submitBtn.disabled = true;
+
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                // Success
+                formMessage.innerHTML = '<div class="alert alert-success border-0 shadow-sm rounded-pill py-3"><strong><i class="fas fa-check-circle me-2"></i>Thanks for Contacting us!</strong> We will get back to you soon.</div>';
+                form.reset(); // Clear the form
+            } else {
+                // Error from FormSubmit Server
+                formMessage.innerHTML = '<div class="alert alert-warning border-0 shadow-sm rounded-pill py-3"><i class="fas fa-exclamation-triangle me-2"></i>Oops! There was a problem submitting your form.</div>';
+            }
+        }).catch(error => {
+            // General Error
+            formMessage.innerHTML = '<div class="alert alert-danger border-0 shadow-sm rounded-pill py-3"><i class="fas fa-exclamation-triangle me-2"></i>Oops! There was a problem submitting your form.</div>';
+        }).finally(() => {
+            // Reset Button State
+            btnText.innerText = originalText;
+            btnIcon.className = 'fas fa-paper-plane ms-2';
+            submitBtn.disabled = false;
+            
+            // Clear message after 6 seconds
+            setTimeout(() => {
+                formMessage.innerHTML = '';
+            }, 6000);
+        });
+    });
+    //]]>
+  </script>
+</body>
+</html>

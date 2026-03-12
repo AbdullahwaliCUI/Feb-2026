@@ -1,0 +1,460 @@
+<!-- Careers / Apply Section Styles -->
+<style>
+    .careers-page {
+        font-family: 'Arial', sans-serif;
+        color: #000000;
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+        line-height: 1.6;
+    }
+
+    .careers-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .careers-header h1 {
+        font-size: 36px;
+        color: #000000;
+        margin-bottom: 10px;
+    }
+
+    /* Tabs Styling */
+    .job-tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 0;
+    }
+
+    .job-tab {
+        padding: 12px 25px;
+        background: #f1f1f1;
+        border: none;
+        border-radius: 8px 8px 0 0;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        color: #666;
+    }
+
+    .job-tab:hover {
+        background: #e8e8e8;
+    }
+
+    .job-tab.active {
+        background: #ffd700;
+        color: #000;
+        border-bottom: 2px solid #ffd700;
+        margin-bottom: -2px;
+    }
+
+    .tab-content {
+        display: none;
+        animation: fadeIn 0.4s ease;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .careers-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        background: #f9f9f9;
+        padding: 30px;
+        border-top: 3px solid #ffd700;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-radius: 0 0 8px 8px;
+    }
+
+    .job-description {
+        flex: 1.2;
+        min-width: 300px;
+    }
+
+    .job-description h2 {
+        font-size: 24px;
+        color: #000000;
+        border-bottom: 2px solid #ffd700;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .job-description h3 {
+        font-size: 18px;
+        color: #333;
+        margin-top: 20px;
+    }
+
+    .job-description ul {
+        padding-left: 20px;
+    }
+
+    .job-description li {
+        margin-bottom: 10px;
+    }
+
+    .apply-form-container {
+        flex: 1;
+        min-width: 300px;
+        background: #ffffff;
+        padding: 30px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .apply-form-container h2 {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #000000;
+    }
+
+    .apply-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 14px;
+        background: #fff;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: #ffd700;
+        outline: none;
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+    }
+
+    .file-upload-wrapper {
+        position: relative;
+        border: 2px dashed #ccc;
+        padding: 20px;
+        text-align: center;
+        border-radius: 4px;
+        background: #fdfdfd;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .file-upload-wrapper:hover {
+        border-color: #ffd700;
+        background: #fffdf0;
+    }
+
+    .file-upload-wrapper input[type="file"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .file-upload-wrapper p {
+        margin: 0;
+        color: #666;
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        background: #ffd700;
+        color: #000;
+        border: 2px solid #000;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+        background: #000;
+        color: #ffd700;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .careers-content {
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .job-tabs {
+            flex-direction: column;
+            gap: 5px;
+            border-bottom: none;
+        }
+
+        .job-tab {
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .job-tab.active {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+    }
+</style>
+
+<!-- Careers / Apply Section HTML -->
+<div class="careers-page">
+
+    <div class="careers-header">
+        <h1>Join Our Team</h1>
+        <p>Freelancers & Professionals Welcome</p>
+    </div>
+
+    <!-- Job Tabs -->
+    <div class="job-tabs">
+        <button class="job-tab active" onclick="openJob(event, 'job1')">Casual Structural Drafter</button>
+        <button class="job-tab" onclick="openJob(event, 'job2')">Civil Engineer (Freelance)</button>
+        <button class="job-tab" onclick="openJob(event, 'job3')">Structural Engineer</button>
+    </div>
+
+    <div class="careers-content">
+        <!-- Job Descriptions Area -->
+        <div class="job-description">
+
+            <!-- Job 1 -->
+            <div id="job1" class="tab-content active">
+                <h2>Casual Structural Drafter</h2>
+                <p><strong>Location:</strong> Remote</p>
+                <p><strong>Rate:</strong> Competitive Hourly Rate (Based on experience)</p>
+                <p><strong>Commitment:</strong> Casual / Project-to-project</p>
+
+                <h3>About the Role</h3>
+                <p>AR Consulting Engineers is looking for a meticulous <strong>Structural Drafter / CAD
+                        Technician</strong> to join our team on a casual basis. We are a boutique consultancy known for
+                    delivering high-quality structural solutions, and we need a drafting expert who can turn engineering
+                    concepts into "site-ready" documentation. This is a flexible role, perfect for a freelancer or a
+                    professional looking for supplementary project work.</p>
+
+                <h3>What You’ll Do:</h3>
+                <ul>
+                    <li>Produce detailed structural drawings for [Residential / Commercial / Industrial] projects.</li>
+                    <li>Work directly with our Chartered Structural Engineers to translate sketches and calculations
+                        into 2D/3D plans.</li>
+                    <li>Develop reinforced concrete, structural steel, and timber framing details.</li>
+                    <li>Ensure all drawings comply with AS1100 and relevant Australian building codes.</li>
+                    <li>Manage revisions and redline markups with high accuracy and fast turnaround.</li>
+                </ul>
+            </div>
+
+            <!-- Job 2 -->
+            <div id="job2" class="tab-content">
+                <h2>Civil Engineer (Freelance)</h2>
+                <p><strong>Location:</strong> Remote / Project Basis</p>
+                <p><strong>Rate:</strong> Project Based</p>
+
+                <h3>About the Role</h3>
+                <p>(Waiting for detailed description from client...)</p>
+                <p>We are seeking an experienced Civil Engineer to support our ongoing infrastructure and land
+                    development projects. You will be responsible for site planning, drainage design, and compliance
+                    reporting.</p>
+
+                <h3>Typical Tasks:</h3>
+                <ul>
+                    <li>Stormwater management design.</li>
+                    <li>Road and pavement design.</li>
+                    <li>Site inspections and reporting.</li>
+                </ul>
+            </div>
+
+            <!-- Job 3 -->
+            <div id="job3" class="tab-content">
+                <h2>Structural Engineer</h2>
+                <p><strong>Location:</strong> Remote</p>
+                <p><strong>Experience Level:</strong> 3–7 Years</p>
+                <p><strong>Type:</strong> Casual</p>
+
+                <h3>The Opportunity</h3>
+                <p>Are you ready to see your designs move from the screen to the skyline? We are looking for a
+                    detail-oriented Structural Engineer to join our growing team. At AR CONSULTING ENGINEERS, we don’t
+                    just build structures; we solve complex spatial puzzles. Whether it's a high-rise residential
+                    complex or a specialized industrial facility, you will play a critical role in ensuring safety,
+                    sustainability, and structural integrity.</p>
+
+                <h3>What You’ll Do</h3>
+                <ul>
+                    <li><strong>Design & Analysis:</strong> Perform gravity and lateral analysis for buildings using
+                        industry-standard software (RISA, ETABS, or RAM).</li>
+                    <li><strong>Blueprint Mastery:</strong> Prepare structural drawings, specifications, and reports
+                        that serve as the backbone of our projects.</li>
+                    <li><strong>Collaborate:</strong> Work side-by-side with architects, MEP engineers, and contractors
+                        to ensure a seamless "buildable" design.</li>
+                    <li><strong>Field Work:</strong> Conduct site visits and structural observations to ensure
+                        construction aligns with the vision.</li>
+                    <li><strong>Innovation:</strong> Apply your knowledge of building codes (IBC, ASCE 7, ACI, AISC) to
+                        push the boundaries of modern design.</li>
+                </ul>
+
+                <h3>The Requirements</h3>
+                <ul>
+                    <li><strong>Education:</strong> Bachelor’s degree in Civil or Structural Engineering (Master’s
+                        preferred).</li>
+                    <li><strong>Credentials:</strong> EIT required; PE license is a major plus (or being on the track to
+                        get it).</li>
+                    <li><strong>Tech Savvy:</strong> Proficiency in AutoCAD and Revit is essential.</li>
+                    <li><strong>Critical Thinking:</strong> You don’t just follow a checklist; you understand the why
+                        behind the load path.</li>
+                    <li><strong>Communication:</strong> Ability to explain complex technical concepts to non-engineers
+                        without the "jargon-overload."</li>
+                </ul>
+
+                <h3>Why AR consulting engineers?</h3>
+                <ul>
+                    <li><strong>Growth:</strong> We provide mentorship and financial support for PE licensure and
+                        continuing education.</li>
+                    <li><strong>Impact:</strong> Work on high-profile projects that shape the local community.</li>
+                </ul>
+
+                <hr />
+                <p><strong>How to Apply:</strong> If you’re ready to build something lasting, send your resume and a
+                    brief portfolio of your best work to our team.</p>
+            </div>
+
+        </div>
+
+        <!-- Application Form Column -->
+        <div class="apply-form-container">
+            <h2>Apply Now</h2>
+            <p>Select your desired role and send your application details.</p>
+
+            <form action="https://formsubmit.co/admin@arconsultingengineers.com" method="POST"
+                enctype="multipart/form-data" class="apply-form" id="careersApplyForm">
+
+                <input type="hidden" name="_captcha" value="false">
+                <!-- Subject will be updated by script below -->
+                <input type="hidden" name="_subject" id="formSubject" value="New Job Application">
+                <input type="hidden" name="_next" value="https://www.arconsultingengineers.com/">
+
+                <div class="form-group">
+                    <label for="jobTitle">Position Applying For *</label>
+                    <select id="jobTitle" name="Job Title" required onchange="updateSubject()">
+                        <option value="" disabled selected>Select a position...</option>
+                        <option value="Casual Structural Drafter">Casual Structural Drafter</option>
+                        <option value="Civil Engineer (Freelance)">Civil Engineer (Freelance)</option>
+                        <option value="Structural Engineer">Structural Engineer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="Full Name" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="emailAddr">Email Address *</label>
+                    <input type="email" id="emailAddr" name="Email" required placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNum">Phone Number</label>
+                    <input type="tel" id="phoneNum" name="Phone" placeholder="+61 ...">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="Message" rows="5" required
+                        placeholder="Tell us briefly about your experience..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload CV / Portfolio (PDF, DOCX) *</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" name="attachment_cv" accept=".pdf,.doc,.docx" required>
+                        <p>Click here or drag to upload CV</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Cover Letter (PDF, DOCX)</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" name="attachment_cover_letter" accept=".pdf,.doc,.docx">
+                        <p>Click here or drag to upload Cover Letter</p>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitFormBtn">Send Application</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openJob(evt, jobName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("job-tab");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        document.getElementById(jobName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+
+        // Auto-select in dropdown if possible
+        var select = document.getElementById("jobTitle");
+        var jobTitle = evt.currentTarget.textContent;
+        for (var j = 0; j < select.options.length; j++) {
+            if (select.options[j].value === jobTitle) {
+                select.selectedIndex = j;
+                updateSubject();
+                break;
+            }
+        }
+    }
+
+    function updateSubject() {
+        var select = document.getElementById("jobTitle");
+        var subject = document.getElementById("formSubject");
+        if (select.value) {
+            subject.value = "New Job Application - " + select.value;
+        }
+    }
+</script>

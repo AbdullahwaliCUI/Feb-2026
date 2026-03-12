@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='adam-azam-blogger.xml' b:templateVersion='1.3.3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <title><data:view.title.escaped/></title>
+  <b:include data='blog' name='all-head-content'/>
+
+  <!-- Bootstrap 5 CSS -->
+  <link crossorigin='anonymous' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' rel='stylesheet'/>
+  <!-- FontAwesome -->
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
+  
+  <b:skin version='1.3.3'><![CDATA[
+    /* Custom CSS Variables and Styles */
+    :root {
+      --primary-color: #0d6efd;
+      --secondary-color: #6c757d;
+      --accent-color: #f39c12;
+    }
+    body {
+      font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: #f8f9fa;
+      clip-path: polygon(0 100%, 100% 100%, 100% 0);
+    }
+    .hero-title {
+      font-weight: 800;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      font-weight: 300;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+    
+    /* Services Section */
+    .services-section {
+      padding: 80px 0;
+      background-color: #f8f9fa;
+    }
+    .service-card {
+      background: white;
+      border-radius: 15px;
+      padding: 40px 30px;
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.05);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--primary-color);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+      z-index: -1;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    .service-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 25px;
+    }
+    .service-title {
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+    
+    /* Blog Section */
+    .blog-section {
+      padding: 80px 0;
+      background-color: white;
+    }
+    .section-title {
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 50px;
+      color: #2c3e50;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background-color: var(--primary-color);
+      border-radius: 2px;
+    }
+    
+    /* Post Styles */
+    .post-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+    .post-card:hover {
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    .post-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .post-content {
+      padding: 25px;
+    }
+    .post-title a {
+      color: #2c3e50;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    .post-title a:hover {
+      color: var(--primary-color);
+    }
+    .post-meta {
+      font-size: 0.85rem;
+      color: #7f8c8d;
+      margin-bottom: 15px;
+    }
+    .read-more {
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .read-more:hover {
+      color: #0b5ed7;
+      text-decoration: underline;
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 50px 0 20px;
+    }
+    .footer-heading {
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+    }
+    .social-links a {
+      color: white;
+      font-size: 1.2rem;
+      margin-right: 15px;
+      transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+      color: var(--accent-color);
+    }
+    .copyright {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Navbar */
+    .navbar-custom {
+      background-color: white !important;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 15px 0;
+    }
+    .navbar-custom .navbar-brand {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      letter-spacing: -0.5px;
+    }
+    .navbar-custom .nav-link {
+      font-weight: 600;
+      color: #2c3e50 !important;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease;
+    }
+    .navbar-custom .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+    .navbar-custom .btn-quote {
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 600;
+      border-radius: 30px;
+      padding: 8px 20px;
+      transition: all 0.3s ease;
+    }
+    .navbar-custom .btn-quote:hover {
+      background-color: #0b5ed7;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+      color: white;
+    }
+  ]]></b:skin>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class='navbar navbar-expand-lg navbar-light navbar-custom sticky-top'>
+    <div class='container'>
+      <a class='navbar-brand' href='/'><i class='fas fa-microscope me-2'></i>ResearchConsult</a>
+      <button aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-bs-target='#navbarNav' data-bs-toggle='collapse' type='button'>
+        <span class='navbar-toggler-icon'></span>
+      </button>
+      <div class='collapse navbar-collapse' id='navbarNav'>
+        <ul class='navbar-nav ms-auto align-items-center'>
+          <li class='nav-item'>
+            <a class='nav-link' href='#home'>Home</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='#services'>Our Services</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='#blog'>Articles</a>
+          </li>
+          <li class='nav-item ms-lg-3 mt-3 mt-lg-0'>
+            <a class='btn btn-quote' href='#contact'>Get Guidance</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <b:section id='header-section' maxwidgets='1' showaddelement='no'>
+    <b:widget id='Header1' locked='true' title='Research Consultancy' type='Header' version='2'>
+       <b:includable id='main'>
+          <!-- Custom header can go here but we use our own static hero for now -->
+       </b:includable>
+       <b:includable id='description'>
+          <!-- Description -->
+       </b:includable>
+       <b:includable id='title'>
+          <!-- Title -->
+       </b:includable>
+    </b:widget>
+  </b:section>
+
+  <!-- Hero Section -->
+  <section class='hero-section' id='home'>
+    <div class='container'>
+      <div class='row justify-content-center'>
+        <div class='col-lg-10'>
+          <h1 class='hero-title'>Expert Research Consultancy</h1>
+          <p class='hero-subtitle'>Research consultancy traning to paper publish classes and compleet Guide with our expert researchers. each and everyting hum proideakry gy ,, machine learning and in appliend fileds. data set with complete work flow guidence.</p>
+          <div class='mt-4'>
+            <a class='btn btn-light btn-lg px-4 py-3 fw-bold me-3 shadow' href='#services'>Explore Services</a>
+            <a class='btn btn-outline-light btn-lg px-4 py-3 fw-bold' href='#contact'><i class='fas fa-paper-plane me-2'></i>Contact Experts</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class='services-section' id='services'>
+    <div class='container'>
+      <h2 class='section-title'>What We Provide</h2>
+      <div class='row g-4 mt-2'>
+        <div class='col-md-4'>
+          <div class='service-card'>
+            <div class='service-icon'>
+              <i class='fas fa-graduation-cap'></i>
+            </div>
+            <h3 class='service-title'>Training to Paper Publish</h3>
+            <p class='text-muted'>Complete classes and guidance from basic training all the way to successfully publishing your research paper. Every step is covered by our experts.</p>
+          </div>
+        </div>
+        <div class='col-md-4'>
+          <div class='service-card'>
+            <div class='service-icon'>
+              <i class='fas fa-brain'></i>
+            </div>
+            <h3 class='service-title'>Machine Learning &amp; Applied Fields</h3>
+            <p class='text-muted'>Specialized expertise in Machine Learning algorithms, deep learning, and their practical implementation across various applied research fields.</p>
+          </div>
+        </div>
+        <div class='col-md-4'>
+          <div class='service-card'>
+            <div class='service-icon'>
+              <i class='fas fa-database'></i>
+            </div>
+            <h3 class='service-title'>Datasets &amp; Workflow</h3>
+            <p class='text-muted'>We provide relevant datasets along with complete workflow guidance to ensure your research method is robust, verifiable, and impactful.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content/Blog Section -->
+  <section class='blog-section' id='blog'>
+    <div class='container'>
+      <h2 class='section-title'>Latest Research &amp; Articles</h2>
+      
+      <!-- Blogger Main Widget Area -->
+      <b:section class='main-posts' id='main' maxwidgets='1' showaddelement='no'>
+        <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2'>
+          <b:includable id='main'>
+            <b:if cond='data:view.isMultipleItems'>
+              <!-- Index Page / Home View -->
+              <div class='row'>
+                <b:loop values='data:posts' var='post'>
+                  <div class='col-lg-4 col-md-6'>
+                    <article class='post-card'>
+                      <!-- Post Image -->
+                      <b:if cond='data:post.featuredImage'>
+                        <img class='post-img' expr:alt='data:post.title' expr:src='data:post.featuredImage'/>
+                      <b:else/>
+                        <div class='post-img d-flex align-items-center justify-content-center bg-light text-muted' style='height: 200px;'>
+                           <i class='fas fa-image fa-3x'></i>
+                        </div>
+                      </b:if>
+                      
+                      <div class='post-content'>
+                        <div class='post-meta'>
+                          <i class='far fa-calendar-alt me-1'></i> <b:eval expr='data:post.date format &quot;MMM dd, yyyy&quot;'/>
+                          <span class='mx-2'>|</span>
+                          <i class='far fa-folder me-1'></i> <b:if cond='data:post.labels'><b:loop values='data:post.labels' var='label'><a expr:href='data:label.url'><data:label.name/></a><b:if cond='!data:label.isLast'>, </b:if></b:loop><b:else/>Uncategorized</b:if>
+                        </div>
+                        <h3 class='post-title'>
+                          <a expr:href='data:post.url'><data:post.title/></a>
+                        </h3>
+                        <p class='post-snippet mb-0 text-muted'>
+                          <data:post.snippets.short/>...
+                        </p>
+                        <a class='read-more' expr:href='data:post.url'>Read Article <i class='fas fa-arrow-right ms-1'></i></a>
+                      </div>
+                    </article>
+                  </div>
+                </b:loop>
+              </div>
+              
+              <!-- Pagination -->
+              <b:include name='nextprev'/>
+              
+            <b:else/>
+              <!-- Single Post View -->
+              <div class='row justify-content-center'>
+                <div class='col-lg-8'>
+                  <b:loop values='data:posts' var='post'>
+                    <article class='single-post bg-white p-4 p-md-5 rounded shadow-sm border'>
+                      <h1 class='fw-bold mb-3'><data:post.title/></h1>
+                      <div class='post-meta mb-4 pb-3 border-bottom'>
+                        <i class='far fa-calendar-alt me-1'></i> <b:eval expr='data:post.date format &quot;MMM dd, yyyy&quot;'/>
+                        <span class='mx-2'>|</span>
+                        <i class='far fa-user me-1'></i> <data:post.author.name/>
+                      </div>
+                      
+                      <div class='post-body'>
+                        <data:post.body/>
+                      </div>
+                      
+                      <b:if cond='data:post.labels'>
+                        <div class='post-tags mt-5 pt-3 border-top'>
+                          <strong>Labels:</strong> 
+                          <b:loop values='data:post.labels' var='label'>
+                            <a class='badge bg-light text-dark text-decoration-none ms-1' expr:href='data:label.url'><data:label.name/></a>
+                          </b:loop>
+                        </div>
+                      </b:if>
+                    </article>
+                    
+                    <!-- Comments Section -->
+                    <b:if cond='data:post.allowComments'>
+                       <div class='comments-area mt-5'>
+                         <b:include data='post' name='comments'/>
+                       </div>
+                    </b:if>
+                  </b:loop>
+                </div>
+              </div>
+            </b:if>
+          </b:includable>
+          
+          <b:includable id='nextprev'>
+            <div class='blog-pager d-flex justify-content-between mt-4'>
+              <b:if cond='data:newerPageUrl'>
+                <a class='btn btn-outline-primary' expr:href='data:newerPageUrl' expr:title='data:messages.newerPosts'>
+                  <i class='fas fa-chevron-left me-1'></i> Newer
+                </a>
+              <b:else/>
+                <div></div>
+              </b:if>
+              
+              <b:if cond='data:olderPageUrl'>
+                <a class='btn btn-outline-primary' expr:href='data:olderPageUrl' expr:title='data:messages.olderPosts'>
+                  Older <i class='fas fa-chevron-right ms-1'></i>
+                </a>
+              <b:else/>
+                <div></div>
+              </b:if>
+            </div>
+          </b:includable>
+
+          <!-- Empty Includables to pass Blogger validation -->
+          <b:includable id='commentDeleteIcon'></b:includable>
+          <b:includable id='commentForm'></b:includable>
+          <b:includable id='commentFormIframeSrc'></b:includable>
+          <b:includable id='commentItem'></b:includable>
+          <b:includable id='commentList'></b:includable>
+          <b:includable id='commentPicker'></b:includable>
+          <b:includable id='comments'></b:includable>
+          <b:includable id='commentsTitle'></b:includable>
+          <b:includable id='feedLinks'></b:includable>
+          <b:includable id='feedLinksBody'></b:includable>
+          <b:includable id='iframeComments'></b:includable>
+          <b:includable id='inlineAd'></b:includable>
+          <b:includable id='post'></b:includable>
+          <b:includable id='postQuickEdit'></b:includable>
+          <b:includable id='shareButtons'></b:includable>
+          <b:includable id='status-message'></b:includable>
+          <b:includable id='threadedCommentForm'></b:includable>
+          <b:includable id='threadedCommentJs'></b:includable>
+          <b:includable id='threadedComments'></b:includable>
+        </b:widget>
+      </b:section>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class='footer' id='contact'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-lg-4 mb-4 mb-lg-0'>
+          <h4 class='footer-heading'><i class='fas fa-microscope me-2'></i>ResearchConsult</h4>
+          <p class='text-white-50'>Your partner from raw data to published paper. We guide you through machine learning implementations and complete workflows.</p>
+        </div>
+        <div class='col-lg-4 mb-4 mb-lg-0'>
+          <h4 class='footer-heading'>Quick Links</h4>
+          <ul class='list-unstyled'>
+            <li class='mb-2'><a class='text-white-50 text-decoration-none' href='#home'>Home</a></li>
+            <li class='mb-2'><a class='text-white-50 text-decoration-none' href='#services'>Services</a></li>
+            <li class='mb-2'><a class='text-white-50 text-decoration-none' href='#blog'>Articles</a></li>
+          </ul>
+        </div>
+        <div class='col-lg-4'>
+          <h4 class='footer-heading'>Connect With Us</h4>
+          <p class='text-white-50'>Get expert guidance for your research paper today.</p>
+          <div class='social-links mt-3'>
+            <a href='#'><i class='fab fa-twitter'></i></a>
+            <a href='#'><i class='fab fa-linkedin-in'></i></a>
+            <a href='#'><i class='fab fa-facebook-f'></i></a>
+            <a href='#'><i class='fas fa-envelope'></i></a>
+          </div>
+        </div>
+      </div>
+      <div class='copyright'>
+        <p class='mb-0'>&#169; 2026 Research Consultancy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script crossorigin='anonymous' integrity='sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'></script>
+  
+  <script>
+    //<![CDATA[
+    // Simple smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+              targetElement.scrollIntoView({
+                  behavior: 'smooth'
+              });
+            }
+        });
+    });
+    //]]>
+  </script>
+</body>
+</html>
