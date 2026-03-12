@@ -364,7 +364,11 @@
                     </div>
                 </div>
 
-                <button class="submit-btn" id="submitFormBtn" type="submit">Send Application</button>
+                <div class="form-group">
+                    <div class="g-recaptcha" data-callback="enableBtn" data-sitekey="6LfJR4gsAAAAAHgarkwrgGWbtQx2DewW1T_bGapn"></div>
+                </div>
+
+                <button class="submit-btn" id="submitFormBtn" type="submit" disabled>Send Application</button>
             </form>
         </div>
     </div>
@@ -403,4 +407,10 @@ function updateSubject() {
         subject.value = "New Job Application - " + select.value;
     }
 }
+
+function enableBtn() {
+    document.getElementById("submitFormBtn").disabled = false;
+}
 </script>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
